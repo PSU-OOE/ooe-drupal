@@ -1,0 +1,14 @@
+.region--header {
+  background-color: #f2f3f9;
+}
+
+.region--header > .region__content {
+  padding: 2rem;
+}
+
+@media screen and (min-width: 550px) {
+  .region--header > .region__content {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}

@@ -1,0 +1,6 @@
+{% extends "block.html.twig" %}
+{% block content %}
+  {&percnt; include '@blocks/breadcrumbs/breadcrumbs.twig' with {
+    links: links
+  } only &percnt;}
+{% endblock %}

@@ -1,0 +1,48 @@
+global:
+  version: 1.0.0
+  css:
+    theme:
+      components/global/base/styles.css: { }
+      css/header/header.css: { }
+
+primary_nav:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--primary-nav.css: { }
+
+main-content:
+  version: 1.0.0
+  css:
+    theme:
+      css/main-content.css: { }
+
+content:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--content.css: { }
+
+aside:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--aside.css: { }
+
+footer_top:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--footer-top.css: { }
+
+footer_middle:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--footer-middle.css: { }
+
+footer_bottom:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--footer-bottom.css: { }

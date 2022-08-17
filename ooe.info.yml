@@ -1,0 +1,23 @@
+name: "OOE drupal base theme"
+type: theme
+core_version_requirement: ^9 || ^10
+base theme: false
+regions:
+  utility: "Utility bar"
+  cta: "Call to action"
+  primary_nav: "Primary navigation"
+  content: "Content"
+  aside: "Aside"
+  footer_top: "Footer top"
+  footer_middle: "Footer middle"
+  footer_bottom: "Footer bottom"
+libraries:
+  - ooe/global
+components:
+  namespaces:
+    atoms: "components/atoms"
+    molecules: "components/molecules"
+    organisms: "components/organisms"
+dependencies:
+  - components:components
+  - twig_tweak:twig_tweak

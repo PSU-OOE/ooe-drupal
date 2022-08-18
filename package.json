@@ -1,0 +1,26 @@
+{
+  "name": "@psu-ooe/ooe-drupal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node ./scripts/post-install.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PSU-OOE/ooe-drupal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PSU-OOE/ooe-drupal/issues"
+  },
+  "homepage": "https://github.com/PSU-OOE/ooe-drupal#readme",
+  "dependencies": {
+    "@psu-ooe/base-dev": "^1.0.0"
+  },
+  "devDependencies": {
+    "fs-extra": "^10.1.0"
+  }
+}

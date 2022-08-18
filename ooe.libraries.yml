@@ -30,6 +30,12 @@ region--primary_nav:
     theme:
       css/region--primary-nav.css: { }
 
+region--before-content:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--before-content.css: { }
+
 region--content:
   version: 1.0.0
   css:
@@ -41,6 +47,12 @@ region--aside:
   css:
     theme:
       css/region--aside.css: { }
+
+region--after-content:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--after-content.css: { }
 
 region--footer_top:
   version: 1.0.0

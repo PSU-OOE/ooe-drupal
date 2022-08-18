@@ -1,0 +1,11 @@
+.region--before-content > .region__content {
+  padding: 0 2rem;
+  max-width: 119rem;
+  margin: auto;
+}
+
+@media screen and (min-width: 550px) {
+  .region--before-content > .region__content {
+    padding: 0 4rem;
+  }
+}

@@ -15,13 +15,50 @@ regions:
   footer_top: "Footer top"
   footer_middle: "Footer middle"
   footer_bottom: "Footer bottom"
+
+# Only load in the minimum necessary to keep the lights on.  Subsequent
+# libraries should always be attached in context to keep payloads small.
 libraries:
   - ooe/global
+
+# Unset a bunch of stuff that leaks in from core that we don't use.
+libraries-override:
+  system/base:
+    css:
+      component:
+        css/components/ajax-progress.module.css: false
+        css/components/align.module.css: false
+        css/components/autocomplete-loading.module.css: false
+        css/components/fieldgroup.module.css: false
+        css/components/container-inline.module.css: false
+        css/components/clearfix.module.css: false
+        css/components/details.module.css: false
+        css/components/hidden.module.css: false
+        css/components/item-list.module.css: false
+        css/components/js.module.css: false
+        css/components/nowrap.module.css: false
+        css/components/position-container.module.css: false
+        css/components/progress.module.css: false
+        css/components/reset-appearance.module.css: false
+        css/components/resize.module.css: false
+        css/components/sticky-header.module.css: false
+        css/components/system-status-counter.css: false
+        css/components/system-status-report-counters.css: false
+        css/components/system-status-report-general-info.css: false
+        css/components/tabledrag.module.css: false
+        css/components/tablesort.module.css: false
+        css/components/tree-child.module.css: false
+  views/views.module:
+    css:
+      component:
+        css/views.module.css: false
+
 components:
   namespaces:
     atoms: "components/atoms"
     molecules: "components/molecules"
     organisms: "components/organisms"
+
 dependencies:
   - components:components
   - twig_tweak:twig_tweak

@@ -3,45 +3,58 @@ global:
   css:
     theme:
       components/global/base/styles.css: { }
-      css/header/header.css: { }
+      css/header.css: { }
+      css/main-content.css: { }
 
-primary_nav:
+region--announcements:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--announcements.css: { }
+
+region--branding:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--branding.css: { }
+
+region--utility:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--utility.css: { }
+
+region--primary_nav:
   version: 1.0.0
   css:
     theme:
       css/region--primary-nav.css: { }
 
-main-content:
-  version: 1.0.0
-  css:
-    theme:
-      css/main-content.css: { }
-
-content:
+region--content:
   version: 1.0.0
   css:
     theme:
       css/region--content.css: { }
 
-aside:
+region--aside:
   version: 1.0.0
   css:
     theme:
       css/region--aside.css: { }
 
-footer_top:
+region--footer_top:
   version: 1.0.0
   css:
     theme:
       css/region--footer-top.css: { }
 
-footer_middle:
+region--footer_middle:
   version: 1.0.0
   css:
     theme:
       css/region--footer-middle.css: { }
 
-footer_bottom:
+region--footer_bottom:
   version: 1.0.0
   css:
     theme:

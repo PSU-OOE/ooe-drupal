@@ -1,0 +1,4 @@
+.region--announcements > .region__content {
+  display: flex;
+  flex-direction: column;
+}

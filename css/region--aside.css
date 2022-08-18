@@ -1,11 +1,4 @@
 .region--aside {
-  flex: 1 1 calc(22.5% - 2rem);
-  margin: 0 2.5% 0 2rem;
-}
-
-@media screen and (min-width: 550px) {
-  .region--aside {
-    flex-basis: calc(22.5% - 4rem);
-    margin-left: 4rem;
-  }
+  flex: 1 1 22.5%;
+  margin-right: 2.5%;
 }

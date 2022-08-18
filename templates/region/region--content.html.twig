@@ -1,22 +1,12 @@
 {#
 /**
  * @file
- * Default theme implementation to display a region.
- *
- * Available variables:
- * - content: The content for this region, typically blocks.
- * - attributes: HTML attributes for the region <div>.
- * - region: The name of the region variable as defined in the theme's
- *   .info.yml file.
- *
- * @see template_preprocess_region()
- *
- * @ingroup themeable
+ * Overridden implementation to display the content region.
  */
 #}
 {% if content %}
   <main{{ attributes }}>
-    {{ attach_library('ooe/' ~ region) }}
+    {{ attach_library('ooe/region--' ~ region) }}
     <div class="region__content">
       {{ content }}
     </div>

@@ -1,4 +1,16 @@
+html {
+  font-size: 62.5%;
+}
 #main-content {
   display: flex;
   flex-flow: row-reverse wrap;
+  padding: 0 2rem;
+  max-width: 119rem;
+  margin: auto;
+}
+
+@media screen and (min-width: 550px) {
+  #main-content {
+    padding: 0 4rem;
+  }
 }

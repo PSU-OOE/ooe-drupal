@@ -3,11 +3,15 @@ type: theme
 core_version_requirement: ^9 || ^10
 base theme: false
 regions:
+  announcements: "Announcements"
+  branding: "Site branding"
   utility: "Utility bar"
   cta: "Call to action"
   primary_nav: "Primary navigation"
+  above_content: "Above content"
   content: "Content"
   aside: "Aside"
+  below_content: "Below content"
   footer_top: "Footer top"
   footer_middle: "Footer middle"
   footer_bottom: "Footer bottom"

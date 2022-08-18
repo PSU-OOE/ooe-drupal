@@ -3,15 +3,16 @@ type: theme
 core_version_requirement: ^9 || ^10
 base theme: false
 regions:
+  disabled: "Disabled blocks"
   announcements: "Announcements"
   branding: "Site branding"
   utility: "Utility bar"
   cta: "Call to action"
   primary_nav: "Primary navigation"
-  above_content: "Above content"
+  before_content: "Before content"
   content: "Content"
   aside: "Aside"
-  below_content: "Below content"
+  after_content: "After content"
   footer_top: "Footer top"
   footer_middle: "Footer middle"
   footer_bottom: "Footer bottom"
@@ -20,6 +21,7 @@ regions:
 # libraries should always be attached in context to keep payloads small.
 libraries:
   - ooe/global
+  - ooe/ooe-base
 
 # Unset a bunch of stuff that leaks in from core that we don't use.
 libraries-override:

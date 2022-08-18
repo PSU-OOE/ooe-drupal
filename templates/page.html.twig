@@ -6,18 +6,20 @@
 #}
 
 {{ page.announcements }}
-<header>
-  {{ page.branding }}
-  {{ page.utility }}
-  {{ page.cta }}
+<header class="header" data-flex-wrap-aware>
+  <div class="header__content">
+    {{ page.utility }}
+    {{ page.branding }}
+    {{ page.cta }}
+  </div>
 </header>
 {{ page.primary_nav }}
-{{ page.above_content }}
+{{ page.before_content }}
 <div id="main-content">
   {{ page.content }}
   {{ page.aside }}
 </div>
-{{ page.below_content }}
+{{ page.after_content }}
 <footer>
   {{ page.footer_top }}
   {{ page.footer_middle }}

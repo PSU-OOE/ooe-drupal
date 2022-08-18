@@ -7,10 +7,15 @@
 
 {% extends "block.html.twig" %}
 {% block content %}
+  <a href="#">Site branding block placeholder</a>
 
-  {&percnt; include '@blocks/branding/branding.twig' with {
+{#
+  @TODO: Make a breadcrumbs component.
+
+  include '@blocks/branding/branding.twig' with {
     logo: site_logo,
     name: site_name,
     slogan: site_slogan
-  } only &percnt;}
+  } only
+#}
 {% endblock %}

@@ -3,7 +3,7 @@
 use Drupal\Component\Utility\Html;
 
 /**
- * Implements hook_preprocess_HOOK() for block.
+ * Implements hook_preprocess_HOOK() for region.
  */
 function ooe_preprocess_region(&$variables) {
   $variables['attributes']['class'][] = 'region';

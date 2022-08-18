@@ -13,7 +13,9 @@ function ooe_preprocess_block(array &$variables) {
     unset($variables['attributes']['id']);
   }
 }
-
+/**
+ * Implements hook_preprocess_HOOK() for block__system_breadcrumb_block.
+ */
 function ooe_preprocess_block__system_breadcrumb_block(array &$variables) {
   $links = [];
   foreach ($variables['content']['#links'] as $link) {

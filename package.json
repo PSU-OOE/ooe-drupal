@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/PSU-OOE/ooe-drupal#readme",
   "dependencies": {
+    "@psu-ooe/accordion-dev": "^1.0.0",
     "@psu-ooe/base-dev": "^1.0.0"
   },
   "devDependencies": {

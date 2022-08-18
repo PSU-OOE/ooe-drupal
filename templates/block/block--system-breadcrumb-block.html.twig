@@ -7,7 +7,12 @@
 
 {% extends "block.html.twig" %}
 {% block content %}
-  {&percnt; include '@blocks/breadcrumbs/breadcrumbs.twig' with {
-    links: links
-  } only &percnt;}
+  <a href="#">Breadcrumbs block placeholder</a>
+  {#
+    @TODO: Make a breadcrumbs component.
+
+    include '@blocks/breadcrumbs/breadcrumbs.twig' with {
+      links: links
+    } only
+  #}
 {% endblock %}

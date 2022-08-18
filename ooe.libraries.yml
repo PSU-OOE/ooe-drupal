@@ -3,6 +3,7 @@ global:
   css:
     theme:
       components/global/base/styles.css: { }
+      css/styles.css: { }
       css/header.css: { }
       css/main-content.css: { }
 
@@ -30,7 +31,7 @@ region--primary_nav:
     theme:
       css/region--primary-nav.css: { }
 
-region--before-content:
+region--before_content:
   version: 1.0.0
   css:
     theme:
@@ -48,7 +49,7 @@ region--aside:
     theme:
       css/region--aside.css: { }
 
-region--after-content:
+region--after_content:
   version: 1.0.0
   css:
     theme:

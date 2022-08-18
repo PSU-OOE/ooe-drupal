@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_HOOK() for off_canvas_page_wrapper.
  */
 function ooe_preprocess_off_canvas_page_wrapper(&$variables) {
   $variables['#cache']['contexts'][] = 'user.roles';

@@ -7,7 +7,10 @@ use Drupal\Component\Utility\Html;
  */
 function ooe_preprocess_block(array &$variables) {
   $variables['attributes']['class'][] = 'block';
-  $variables['attributes']['class'][] = Html::getClass('block--' . $variables['plugin_id']);
+  $variables['attributes']['class'][] = Html::getClass('block--' . $variables['base_plugin_id']);
+  if (isset($variables['derivative_plugin_id'])) {
+    $variables['attributes']['class'][] = Html::getClass('block--' . $variables['base_plugin_id'] . '--' . $variables['derivative_plugin_id']);
+  }
 
   if ($variables['base_plugin_id'] !== 'system_menu_block') {
     unset($variables['attributes']['id']);

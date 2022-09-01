@@ -20,7 +20,8 @@
   "dependencies": {
     "@psu-ooe/accordion-dev": "^1.0.0",
     "@psu-ooe/base-dev": "^1.0.0",
-    "@psu-ooe/grid-dev": "^1.0.1"
+    "@psu-ooe/grid-dev": "^1.0.1",
+    "@psu-ooe/webfonts": "^1.0.4"
   },
   "devDependencies": {
     "fs-extra": "^10.1.0"

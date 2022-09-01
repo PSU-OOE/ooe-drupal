@@ -1,6 +1,8 @@
 <?php
 
 use Drupal\Component\Serialization\Json;
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Render\Markup;
 
 require_once(__DIR__ . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'preprocess.php');
 
@@ -55,4 +57,35 @@ function ooe_library_info_build(): array {
     }
   }
   return $libraries;
+}
+
+/**
+ * Implements hook_preprocess_html().
+ *
+ * Adds the sprite component build artifact to the bottom of every page.
+ */
+function ooe_preprocess_html(array &$variables) {
+
+  /** @var \Drupal\Core\Extension\ThemeExtensionList $extension_theme_list */
+  $extension_theme_list = \Drupal::service('extension.list.theme');
+
+  $sprites_svg = implode(DIRECTORY_SEPARATOR, [
+    $extension_theme_list->getPath('ooe'),
+    'components',
+    'atoms',
+    'sprite',
+    'dist',
+    'sprites.svg',
+  ]);
+
+  if (file_exists($sprites_svg)) {
+
+    // Be sure to sanitize the markup, as it's a third party dependency now.
+    $safe_svg_markup = Xss::filter(file_get_contents($sprites_svg), ['svg', 'defs', 'path', 'g', 'circle']);
+
+    $variables['page_bottom'][] = [
+      '#type' => 'markup',
+      '#markup' => Markup::create($safe_svg_markup),
+    ];
+  }
 }

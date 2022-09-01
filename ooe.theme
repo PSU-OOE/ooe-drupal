@@ -1,3 +1,35 @@
 <?php
 
 require_once(__DIR__ . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'preprocess.php');
+
+/**
+ * Implements hook_library_info_build().
+ */
+function ooe_library_info_build() {
+
+  // Dynamically link the components into Drupal!
+  $libraries = [];
+
+  /** @var \Drupal\Core\Extension\ThemeExtensionList $extension_theme_list */
+  $extension_theme_list = \Drupal::service('extension.list.theme');
+  foreach ($extension_theme_list->getExtensionInfo('ooe')['components']['namespaces'] as $namespace) {
+    $namespace_path = $extension_theme_list->getPath('ooe') . DIRECTORY_SEPARATOR . $namespace;
+    if (file_exists($namespace_path)) {
+      $components = new DirectoryIterator($namespace_path);
+      foreach ($components as $component) {
+
+        $library_name = "ooe.{$component->getFilename()}";
+
+        $scripts_path = $component->getPath() . '/dist/js/scripts.js';
+        if (file_exists($scripts_path)) {
+          $libraries[$library_name]['js'] = [$scripts_path => []];
+        }
+        $styles_path = $component->getPath() . '/dist/css/styles.css';
+        if (file_exists($styles_path)) {
+          $libraries[$library_name]['css']['theme'] = [$styles_path => []];
+        }
+      }
+    }
+  }
+  return $libraries;
+}

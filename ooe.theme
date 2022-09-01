@@ -1,13 +1,25 @@
 <?php
 
+use Drupal\Component\Serialization\Json;
+
 require_once(__DIR__ . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'preprocess.php');
 
 /**
  * Implements hook_library_info_build().
+ *
+ * Dynamically link the components into Drupal!
+ *
+ * for each namespace
+ *   for each component in each namespace
+ *     create a library
+ *     if there is css, add it to the library
+ *     if there is js, add it to the library
+ *     if there are dependencies, declare them
+ *   end component loop
+ * end namespace loop
  */
-function ooe_library_info_build() {
+function ooe_library_info_build(): array {
 
-  // Dynamically link the components into Drupal!
   $libraries = [];
 
   /** @var \Drupal\Core\Extension\ThemeExtensionList $extension_theme_list */
@@ -20,13 +32,24 @@ function ooe_library_info_build() {
 
         $library_name = "ooe.{$component->getFilename()}";
 
-        $scripts_path = $component->getPath() . '/dist/js/scripts.js';
-        if (file_exists($scripts_path)) {
-          $libraries[$library_name]['js'] = [$scripts_path => []];
+        // Resolve javascript files.
+        if (file_exists($component->getPathname() . '/dist/scripts.js')) {
+          $libraries[$library_name]['js'] = [$namespace . '/' . $component->getFilename() . '/dist/scripts.js' => []];
         }
-        $styles_path = $component->getPath() . '/dist/css/styles.css';
-        if (file_exists($styles_path)) {
-          $libraries[$library_name]['css']['theme'] = [$styles_path => []];
+
+        // Resolve CSS files.
+        if (file_exists($component->getPathname() . '/dist/styles.css')) {
+          $libraries[$library_name]['css']['theme'] = [$namespace . '/' . $component->getFilename() . '/dist/styles.css' => []];
+        }
+
+        // Resolve dependencies.
+        $package_manifest = $component->getPathname() . '/package.json';
+        if (file_exists($package_manifest)) {
+          $json = Json::decode(file_get_contents($package_manifest));
+          foreach ($json['dependencies'] as $dependency => $version) {
+            $dependency_library_name = str_replace('@psu-ooe', 'ooe', $dependency);
+            $libraries[$library_name]['dependencies'][] = $dependency_library_name;
+          }
         }
       }
     }

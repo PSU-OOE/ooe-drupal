@@ -57,6 +57,7 @@ libraries-override:
 
 components:
   namespaces:
+    global: "components/global"
     atoms: "components/atoms"
     molecules: "components/molecules"
     organisms: "components/organisms"

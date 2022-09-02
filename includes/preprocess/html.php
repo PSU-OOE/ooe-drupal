@@ -18,27 +18,16 @@ function _ooe_preprocess_html_add_webfonts(array &$variables) {
     'components',
     'global',
     'webfonts',
-    'webfonts.twig',
   ]);
 
-  if (file_exists($webfonts_path)) {
-    $variables['page']['#attached']['html_head'][] = [
-      'webfonts', [
-        '#type' => 'inline_template',
-        '#template' => <<<TEMPLATE
-{% @include '@global/webfonts/webfonts.twig' %}
-TEMPLATE,
-        '#context' => [
-          'base_directory' =>  implode(DIRECTORY_SEPARATOR, [
-            $extension_theme_list->getPath('ooe'),
-            'components',
-            'global',
-            'webfonts',
-            'dist',
-          ]),
-        ]
+  if (file_exists($webfonts_path . DIRECTORY_SEPARATOR . 'webfonts.twig')) {
+    $variables['page']['#attached']['html_head'][] = [[
+      '#type' => 'inline_template',
+      '#template' => '{% include "@global/webfonts/webfonts.twig" %}',
+      '#context' => [
+        'base_directory' =>  $webfonts_path,
       ]
-    ];
+    ], 'webfonts'];
   }
 }
 

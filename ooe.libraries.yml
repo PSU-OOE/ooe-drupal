@@ -2,10 +2,11 @@ global:
   version: 1.0.0
   css:
     theme:
-      components/global/base/styles.css: { }
       css/styles.css: { }
       css/header.css: { }
       css/main-content.css: { }
+  dependencies:
+    - ooe/ooe.base
 
 region--announcements:
   version: 1.0.0

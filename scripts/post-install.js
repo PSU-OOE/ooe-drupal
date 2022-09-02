@@ -14,4 +14,4 @@ components.forEach(component => {
   );
 });
 
-//fse.removeSync('node_modules');
+fse.removeSync('node_modules');

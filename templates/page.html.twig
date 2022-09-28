@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Overridden implementation to display a single page.
+ */
+#}
+
+{{ page.announcements }}
+<header class="header">
+  <div class="header__content" data-flex-wrap-aware>
+    {{ page.utility }}
+    {{ page.branding }}
+    {{ page.cta }}
+  </div>
+</header>
+{{ page.primary_nav }}
+{{ page.before_content }}
+<div id="main-content">
+  {{ page.content }}
+  {{ page.aside }}
+</div>
+{{ page.after_content }}
+<footer>
+  {{ page.footer_top }}
+  {{ page.footer_middle }}
+  {{ page.footer_bottom }}
+</footer>

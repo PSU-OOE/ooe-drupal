@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Overridden implementation to display the content region.
+ */
+#}
+{% if content %}
+  <main{{ attributes }}>
+    {{ attach_library('ooe/region--' ~ region) }}
+    <div class="region__content">
+      {{ content }}
+    </div>
+  </main>
+{% endif %}

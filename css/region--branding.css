@@ -1,0 +1,10 @@
+.region--branding > .region__content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+
+[data-flex-mode="vertical"] .region--branding > .region__content {
+  justify-content: center;
+}

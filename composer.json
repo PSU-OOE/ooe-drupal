@@ -1,0 +1,7 @@
+{
+    "name": "psu-ooe/ooe-drupal",
+    "description": "A bare bones drupal theme binding for the OOE design system",
+    "type": "drupal-theme",
+    "minimum-stability": "stable",
+    "require": {}
+}

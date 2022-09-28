@@ -1,0 +1,98 @@
+drupal:
+  version: 1.0.0
+  css:
+    theme:
+      css/styles.css: { }
+      css/header.css: { }
+      css/main-content.css: { }
+  dependencies:
+    - core/drupal
+
+region--announcements:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--announcements.css: { }
+
+region--branding:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--branding.css: { }
+
+region--utility:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--utility.css: { }
+
+region--primary_nav:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--primary-nav.css: { }
+
+region--before_content:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--before-content.css: { }
+
+region--content:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--content.css: { }
+
+region--aside:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--aside.css: { }
+
+region--after_content:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--after-content.css: { }
+
+region--footer_top:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--footer-top.css: { }
+
+region--footer_middle:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--footer-middle.css: { }
+
+region--footer_bottom:
+  version: 1.0.0
+  css:
+    theme:
+      css/region--footer-bottom.css: { }
+
+primary-nav:
+  version: 1.0.0
+  css:
+    theme:
+      components/primary-nav/dist/styles.css: { }
+  js:
+    components/primary-nav/dist/scripts.js: {  }
+  dependencies:
+    - ooe/base
+    - ooe/sprite
+
+footer-nav:
+  version: 1.0.0
+  css:
+    theme:
+      components/footer-nav/dist/styles.css: { }
+  js:
+    components/footer-nav/dist/scripts.js: {  }
+  dependencies:
+    - ooe/base
+    - ooe/sprite
+    - ooe/slide-toggle

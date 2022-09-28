@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Overridden implementation to display the aside region.
+ */
+#}
+{% if content %}
+  <aside{{ attributes }}>
+    {{ attach_library('ooe/region--' ~ region) }}
+    <div class="region__content">
+      {{ content }}
+    </div>
+  </aside>
+{% endif %}

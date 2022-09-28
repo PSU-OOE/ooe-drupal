@@ -1,0 +1,7 @@
+{{ attach_library('ooe/breadcrumbs') }}
+{% include '@ooe/breadcrumbs/breadcrumbs.twig' with {
+  id: 'breadcrumbs',
+  breadcrumbs: breadcrumb,
+  heading_level: 'h2',
+  heading: 'Breadcrumbs',
+} only %}

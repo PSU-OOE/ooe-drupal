@@ -1,0 +1,95 @@
+# The breakpoints referenced here mirror those found within the theme CSS.
+#
+# Some of these breakpoints may not be used in responsive image configuration.
+#
+ooe.default:
+  label: 'Default'
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+ooe.xxs:
+  label: 'Extra extra small'
+  mediaQuery: '(min-width:320px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+ooe.xs:
+  label: 'Extra small'
+  mediaQuery: '(min-width:550px)'
+  weight: 100
+  multipliers:
+    - 1x
+    - 2x
+ooe.s:
+  label: 'Small'
+  mediaQuery: '(min-width:800px)'
+  weight: 200
+  multipliers:
+    - 1x
+    - 2x
+ooe.m:
+  label: 'Medium'
+  mediaQuery: '(min-width:950px)'
+  weight: 300
+  multipliers:
+    - 1x
+    - 2x
+ooe.l:
+  label: 'Large'
+  mediaQuery: '(min-width:1024px)'
+  weight: 400
+  multipliers:
+    - 1x
+    - 2x
+ooe.xl:
+  label: 'Extra large'
+  mediaQuery: '(min-width:1280px)'
+  weight: 500
+  multipliers:
+    - 1x
+    - 2x
+
+ooe.xxs_preload:
+  label: 'Extra extra small (preload-friendly)'
+  mediaQuery: '(max-width:549px)'
+  weight: 0
+  multipliers:
+    - 1x
+
+ooe.xs_preload:
+  label: 'Extra small (preload-friendly)'
+  mediaQuery: '(min-width:550px) and (max-width:799px)'
+  weight: 100
+  multipliers:
+    - 1x
+
+ooe.s_preload:
+  label: 'Small (preload-friendly)'
+  mediaQuery: '(min-width:800px) and (max-width:949px)'
+  weight: 200
+  multipliers:
+    - 1x
+
+ooe.m_preload:
+  label: 'Medium (preload-friendly)'
+  mediaQuery: '(min-width:950px) and (max-width:1023px)'
+  weight: 300
+  multipliers:
+    - 1x
+
+ooe.l_preload:
+  label: 'Large (preload-friendly)'
+  mediaQuery: '(min-width:1024px) and (max-width:1279px)'
+  weight: 400
+  multipliers:
+    - 1x
+
+ooe.xl_preload:
+  label: 'Extra large (preload-friendly)'
+  mediaQuery: '(min-width:1280px)'
+  weight: 500
+  multipliers:
+    - 1x

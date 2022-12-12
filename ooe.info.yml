@@ -59,6 +59,7 @@ libraries-override:
 components:
   namespaces:
     atoms: "node_modules/@psu-ooe"
+    molecules: "node_modules/@psu-ooe"
     ooe: "node_modules/@psu-ooe"
 
 dependencies:

@@ -1,11 +1,16 @@
 <?php
 
+use Drupal\block\Entity\Block;
 use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_preprocess_HOOK() for block.
  */
 function ooe_preprocess_block(array &$variables) {
+  if (isset($variables['elements']['#id'])) {
+    $region = Block::load($variables['elements']['#id'])->getRegion();
+    $variables['content']['#attributes']['region'] = $region;
+  }
   $variables['attributes']['class'][] = 'block';
   $variables['attributes']['class'][] = Html::getClass('block--' . $variables['base_plugin_id']);
   if (isset($variables['derivative_plugin_id'])) {

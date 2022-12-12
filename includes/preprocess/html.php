@@ -9,6 +9,12 @@ function _ooe_preprocess_html_add_cms_binding(array &$variables) {
     '#tag' => 'script',
     '#value' => Markup::create(<<<SCRIPT
         const cms = {
+          vendor_dir: '/themes/custom/worldcampus/upstream-components/vendor',
+          announce: (text, priority) => {
+            if (typeof Drupal !== 'undefined' && typeof Drupal.announce !== 'undefined') {
+              Drupal.announce(text, priority);
+            }
+          },
           data: name => {
             if (typeof drupalSettings !== 'undefined' && drupalSettings.exposed_data !== 'undefined') {
               return drupalSettings.exposed_data[name];

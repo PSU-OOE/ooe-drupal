@@ -25,6 +25,7 @@ regions:
 # libraries should always be attached in context to keep payloads small.
 libraries:
   - ooe/base
+  - ooe/heading
   - ooe/flex-wrap-listener
   - ooe/drupal
 

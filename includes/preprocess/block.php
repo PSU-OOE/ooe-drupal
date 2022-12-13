@@ -20,6 +20,7 @@ function ooe_preprocess_block(array &$variables) {
   if ($variables['base_plugin_id'] !== 'system_menu_block') {
     unset($variables['attributes']['id']);
   }
+
 }
 /**
  * Implements hook_preprocess_HOOK() for block__system_breadcrumb_block.

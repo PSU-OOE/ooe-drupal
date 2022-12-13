@@ -13,8 +13,12 @@ regions:
   content: "Content"
   aside: "Aside"
   after_content: "After content"
-  footer_top: "Footer top"
-  footer_middle: "Footer middle"
+  footer_top_first: "Footer top (first)"
+  footer_top_second: "Footer top (second)"
+  footer_top_third: "Footer top (third)"
+  footer_middle_first: "Footer middle (first)"
+  footer_middle_second: "Footer middle (second)"
+  footer_middle_third: "Footer middle (third)"
   footer_bottom: "Footer bottom"
 
 # Only load in the minimum necessary to keep the lights on.  Subsequent

@@ -1,1 +1,0 @@
-!function(e){e.attach("footerTop",(t=>{const r=t.querySelector(".footer-top nav");if(!r)return;r.querySelectorAll(".toggle-submenu").forEach((t=>{t.addEventListener("click",(()=>{const r=t.nextElementSibling;"true"===t.getAttribute("aria-expanded")?(e.collapse(r),t.setAttribute("aria-expanded","false")):(e.expand(r),t.setAttribute("aria-expanded","true"))}))}))}))}(cms);

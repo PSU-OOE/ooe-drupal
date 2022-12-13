@@ -5,6 +5,7 @@ drupal:
       css/styles.css: { }
       css/header.css: { }
       css/main-content.css: { }
+      css/footer.css: { }
   dependencies:
     - core/drupal
 

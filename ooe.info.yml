@@ -26,6 +26,7 @@ regions:
 libraries:
   - ooe/base
   - ooe/heading
+  - ooe/sprite
   - ooe/flex-wrap-listener
   - ooe/drupal
 

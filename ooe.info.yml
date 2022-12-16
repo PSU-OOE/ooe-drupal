@@ -20,6 +20,7 @@ regions:
   footer_middle_second: "Footer middle (second)"
   footer_middle_third: "Footer middle (third)"
   footer_bottom: "Footer bottom"
+  floating: "Floating"
 
 # Only load in the minimum necessary to keep the lights on.  Subsequent
 # libraries should always be attached in context to keep payloads small.

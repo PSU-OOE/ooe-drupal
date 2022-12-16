@@ -1,16 +1,23 @@
-html {
-  font-size: 62.5%;
-}
-#main-content {
+.main-content--with-sidebar {
   display: flex;
-  flex-flow: row-reverse wrap;
-  padding: 0 2rem;
-  max-width: 119rem;
+  flex-flow: row-reverse nowrap;
   margin: auto;
+  max-width: 111rem;
+  padding: 0 2rem;
 }
 
 @media screen and (min-width: 550px) {
-  #main-content {
+  .main-content--with-sidebar {
     padding: 0 4rem;
   }
+}
+
+.main-content--with-sidebar .region--aside {
+  float: left;
+  flex-basis: 25%;
+}
+
+.main-content--with-sidebar .region--content {
+  clear: both;
+  flex-basis: 75%;
 }

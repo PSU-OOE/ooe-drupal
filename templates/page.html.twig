@@ -15,9 +15,10 @@
 </header>
 {{ page.primary_nav }}
 {{ page.before_content }}
-<div id="main-content">
+{% set aside = page.aside|render %}
+<div id="main-content" class="main-content{% if aside|striptags|trim %} main-content--with-sidebar{% endif %}">
   {{ page.content }}
-  {{ page.aside }}
+  {{ aside }}
 </div>
 {{ page.after_content }}
 <footer>

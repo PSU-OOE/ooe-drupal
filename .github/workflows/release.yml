@@ -11,7 +11,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      - run: npm install --production
+          registry-url: 'https://npm.pkg.github.com'
+      - run: npm install --omit=dev
+        env:
+         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - run: cd .. && pwd && ls -lah
 #      - name: Create Release
 #        id: create_release

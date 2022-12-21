@@ -16,7 +16,7 @@ jobs:
         env:
          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - run: cd .. && pwd && ls -lah
+      - run: cd .. && tar -zcf --exclude=".git*" ooe.tgz ooe-drupal && ls -lah
 #      - name: Create Release
 #        id: create_release
 #        uses: actions/create-release@v1

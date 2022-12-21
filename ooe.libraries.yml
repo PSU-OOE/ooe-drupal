@@ -1,58 +1,71 @@
 drupal:
   version: 1.0.0
   css:
-    theme:
+    base:
       css/styles.css: { }
+
+header:
+  version: 1.0.0
+  css:
+    layout:
       css/header.css: { }
+
+main-content:
+  version: 1.0.0
+  css:
+    layout:
       css/main-content.css: { }
+
+footer:
+  version: 1.0.0
+  css:
+    layout:
       css/footer.css: { }
-  dependencies:
-    - core/drupal
 
 region--announcements:
   version: 1.0.0
   css:
-    theme:
+    layout:
       css/region--announcements.css: { }
 
 region--branding:
   version: 1.0.0
   css:
-    theme:
+    layout:
       css/region--branding.css: { }
 
 region--utility:
   version: 1.0.0
   css:
-    theme:
+    layout:
       css/region--utility.css: { }
 
 region--primary_nav:
   version: 1.0.0
   css:
-    theme:
+    layout:
       css/region--primary-nav.css: { }
 
 region--before_content:
   version: 1.0.0
   css:
-    theme:
+    layout:
       css/region--before-content.css: { }
 
 region--content:
   version: 1.0.0
   css:
-    theme:
+    layout:
       css/region--content.css: { }
 
 region--aside:
   version: 1.0.0
   css:
-    theme:
+    layout:
       css/region--aside.css: { }
 
 region--after_content:
   version: 1.0.0
   css:
-    theme:
+    layout:
       css/region--after-content.css: { }

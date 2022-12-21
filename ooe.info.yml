@@ -25,11 +25,14 @@ regions:
 # Only load in the minimum necessary to keep the lights on.  Subsequent
 # libraries should always be attached in context to keep payloads small.
 libraries:
-  - ooe/base
+  - ooe/drupal
+  - ooe/header
+  - ooe/main-content
+  - ooe/skip-link
+  - ooe/footer
   - ooe/heading
   - ooe/sprite
   - ooe/flex-wrap-listener
-  - ooe/drupal
 
 # Unset a bunch of stuff that leaks in from core that we don't use.
 libraries-override:

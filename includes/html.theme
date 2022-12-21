@@ -1,15 +1,25 @@
 <?php
+/**
+ * @file
+ * html.theme
+ */
 
 use Drupal\Component\Utility\Xss;
 use Drupal\Core\Render\Markup;
 
+/**
+ * Adds the requisite CMS binding javascript to <head>.
+ *
+ * @param array $variables
+ *   The variables being preprocessed.
+ */
 function _ooe_preprocess_html_add_cms_binding(array &$variables) {
   $variables['page']['#attached']['html_head'][] = [[
     '#type' => 'html_tag',
     '#tag' => 'script',
     '#value' => Markup::create(<<<SCRIPT
         const cms = {
-          vendor_dir: '/themes/custom/worldcampus/upstream-components/vendor',
+          vendor_dir: '/themes/contrib/ooe/node_modules',
           announce: (text, priority) => {
             if (typeof Drupal !== 'undefined' && typeof Drupal.announce !== 'undefined') {
               Drupal.announce(text, priority);
@@ -52,13 +62,12 @@ function _ooe_preprocess_html_add_webfonts(array &$variables) {
     'node_modules',
     '@psu-ooe',
     'webfonts',
-    'webfonts'
+    'webfonts',
   ]);
-
-  if (file_exists($webfonts_path . DIRECTORY_SEPARATOR . 'webfonts.twig')) {
+  if (file_exists($webfonts_path)) {
     $variables['page']['#attached']['html_head'][] = [[
       '#type' => 'inline_template',
-      '#template' => '{% include "@global/webfonts/webfonts.twig" %}',
+      '#template' => '{% include "@ooe/webfonts/webfonts.twig" %}',
       '#context' => [
         'base_directory' =>  $webfonts_path,
       ]

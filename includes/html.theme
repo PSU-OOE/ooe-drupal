@@ -69,7 +69,7 @@ function _ooe_preprocess_html_add_webfonts(array &$variables) {
       '#type' => 'inline_template',
       '#template' => '{% include "@ooe/webfonts/webfonts.twig" %}',
       '#context' => [
-        'base_directory' =>  $webfonts_path,
+        'base_directory' =>  '/' . $webfonts_path,
       ]
     ], 'webfonts'];
   }

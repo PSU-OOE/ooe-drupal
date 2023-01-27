@@ -8,8 +8,22 @@
   width: 24rem;
 }
 
+.toolbar-menu-administration > .toolbar-menu > .menu-item:hover > .toolbar-icon::after,
+.toolbar-menu-administration > .toolbar-menu > .menu-item.menu-item--active-trail > .toolbar-icon::after {
+  top: .4rem !important;
+  left: .4rem !important;
+  height: 4rem !important;
+  width: 4rem !important;
+}
+
+.toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-icon, .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-box > .toolbar-icon {
+  font-size: 1.5rem !important;
+}
+
 .toolbar-menu-administration > .toolbar-menu > .menu-item .toolbar-menu .menu-item .toolbar-icon {
   font-size: 1.5rem !important;
+  padding: 1.2rem 3.2rem 1.2rem 1.2rem !important;
+  margin: .25em 1.2rem !important;
 }
 
 .gin-secondary-toolbar .toolbar-secondary .toolbar-bar .toolbar-tab .toolbar-tray a {

@@ -69,3 +69,9 @@ region--after_content:
   css:
     layout:
       css/region--after-content.css: { }
+
+compatibility:
+  version: 1.0.0
+  css:
+    layout:
+      css/compatibility.css: { }

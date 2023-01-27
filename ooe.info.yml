@@ -33,6 +33,7 @@ libraries:
   - ooe/heading
   - ooe/sprite
   - ooe/flex-wrap-listener
+  - ooe/compatibility
 
 # Unset a bunch of stuff that leaks in from core that we don't use.
 libraries-override:

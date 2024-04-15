@@ -1,45 +1,56 @@
-{#
-/**
- * @file
- * Overridden implementation to display a single page.
- */
-#}
+{% set regions = page|children|map(region => region|render)|filter(region => region|striptags|trim is not empty) %}
 
-{{ page.announcements }}
-<header class="header">
-  <div class="header__content" data-flex-wrap-aware>
-    {{ page.utility }}
-    {{ page.branding }}
-    {{ page.cta }}
-  </div>
-</header>
-{{ page.primary_nav }}
-{{ page.before_content }}
-{% set aside = page.aside|render %}
-<div id="main-content" class="main-content{% if aside|striptags|trim %} main-content--with-sidebar{% endif %}">
-  {{ page.content }}
-  {{ aside }}
-</div>
-{{ page.after_content }}
-<footer>
-  <div class="footer-top">
-    <div class="footer-top__regions">
-      {{ page.footer_top_first }}
-      {{ page.footer_top_second }}
-      {{ page.footer_top_third }}
+{% block announcements %}
+  {{ regions.announcements }}
+{% endblock %}
+
+{% block header %}
+  {{ attach_library('ooe/header') }}
+  {% embed '@psu-ooe/header/header.twig' %}
+    {% block dogear_content %}
+      {{ regions.branding }}
+    {% endblock %}
+    {% block content %}
+      {{ regions.utility_small_viewports }}
+      {{ regions.utility_large_viewports }}
+      {% apply spaceless %}
+        {{ regions.cta_large_viewports }}
+      {% endapply %}
+    {% endblock %}
+    {% block overflow %}
+      {# Note - overflow sections must always render, even when empty. #}
+      {{ page.cta_small_viewports|default({'#region': 'cta_small_viewports', '#theme_wrappers': ['region']}) }}
+      {{ page.overflow_large_viewports|default({'#region': 'overflow_large_viewports', '#theme_wrappers': ['region']}) }}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block content %}
+  {{ regions.content_top }}
+  {% if regions.sidebar and page.content %}
+    <div class="main-content">
+      <main class="main-content__first" id="main-content">
+        {{ page.content }}
+      </main>
+      <aside class="main-content__second">
+        {{ regions.sidebar }}
+      </aside>
     </div>
-  </div>
-  <div class="footer-middle">
-    <div class="footer-middle__regions">
-      {{ page.footer_middle_first }}
-      {{ page.footer_middle_second }}
-      {{ page.footer_middle_third }}
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-bottom__regions">
-      {{ page.footer_bottom }}
-    </div>
-  </div>
-</footer>
-{{ page.floating }}
+  {% elseif regions.sidebar %}
+    <aside>
+      {{ regions.sidebar }}
+    </aside>
+  {% elseif page.content %}
+    <main id="main-content">
+      {{ page.content }}
+    </main>
+  {% endif %}
+  {{ regions.content_bottom }}
+  {{ regions.content_bottom_small_viewports }}
+{% endblock %}
+
+{% block footer %}
+  <footer style="text-align:center">
+    There isn't a footer in the design system.
+  </footer>
+{% endblock %}

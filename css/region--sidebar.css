@@ -1,0 +1,15 @@
+.region--sidebar {
+  --sidebar-block-gap: 5rem;
+  display: none;
+  grid-auto-rows: min-content;
+  grid-template-columns: 100%;
+  gap: var(--sidebar-block-gap);
+  margin-top: var(--sidebar-block-gap)
+}
+
+@media(min-width: 950px) {
+  .region--sidebar {
+    display: grid;
+    margin-top: 0
+  }
+}

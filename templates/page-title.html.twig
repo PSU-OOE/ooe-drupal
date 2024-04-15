@@ -1,0 +1,6 @@
+{{ attach_library('ooe/page-title-banner-plain') }}
+{% include '@psu-ooe/page-title-banner-plain/page-title-banner-plain.twig' with {
+  subtitle_before: title_prefix,
+  title: title,
+  subtitle_after: title_suffix,
+} only %}

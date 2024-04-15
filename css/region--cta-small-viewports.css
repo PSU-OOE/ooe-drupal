@@ -1,0 +1,15 @@
+.region--cta-small-viewports {
+  display: flex;
+  gap: clamp(0.5rem, 1.25vw, 1rem);
+  padding: 1.2rem 0
+}
+
+@media(min-width: 950px) {
+  .region--cta-small-viewports {
+    display: none
+  }
+}
+
+.region--cta-small-viewports:empty {
+  padding: 0.6rem 0
+}

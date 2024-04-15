@@ -27,14 +27,16 @@
  * @ingroup themeable
  */
 #}
-<div{{ attributes }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% set rendered_content = content|render %}
-  {% block content %}
-    {{ rendered_content }}
-  {% endblock %}
-</div>
+{% set rendered_content = content|render %}
+{% if rendered_content %}
+  <div{{ attributes }}>
+    {{ title_prefix }}
+    {% if label %}
+      <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      {{ rendered_content }}
+    {% endblock %}
+  </div>
+{% endif %}

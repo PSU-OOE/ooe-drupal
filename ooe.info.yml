@@ -1,39 +1,33 @@
 name: "OOE drupal base theme"
 type: theme
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10
 base theme: false
+
 regions:
-  disabled: "Disabled blocks"
-  announcements: "Announcements"
-  branding: "Site branding"
-  utility: "Utility bar"
-  cta: "Call to action"
-  primary_nav: "Primary navigation"
-  before_content: "Before content"
-  content: "Content"
-  aside: "Aside"
-  after_content: "After content"
-  footer_top_first: "Footer top (first)"
-  footer_top_second: "Footer top (second)"
-  footer_top_third: "Footer top (third)"
-  footer_middle_first: "Footer middle (first)"
-  footer_middle_second: "Footer middle (second)"
-  footer_middle_third: "Footer middle (third)"
-  footer_bottom: "Footer bottom"
-  floating: "Floating"
+  announcements: Announcements
+  branding: Header (branding)
+  utility_large_viewports: Utility (large viewports)
+  cta_large_viewports: Calls to action (large viewports)
+  utility_small_viewports: Utility (small viewports)
+  cta_small_viewports: Calls to action (small viewports)
+  overflow_large_viewports: Overflow (large viewports)
+  content_top: Content Top
+  sidebar: Sidebar
+  content: Content
+  content_bottom: Content Bottom
+  content_bottom_small_viewports: Content Bottom (small viewports only)
+  footer_top_first: Footer Top First
+  footer_top_second: Footer Top Second
+  footer_top_third: Footer Top Third
+  footer_middle: Footer Middle
+  footer_bottom: Footer Bottom
+  floating: Floating
 
 # Only load in the minimum necessary to keep the lights on.  Subsequent
 # libraries should always be attached in context to keep payloads small.
 libraries:
   - ooe/drupal
-  - ooe/header
-  - ooe/main-content
-  - ooe/skip-link
-  - ooe/footer
-  - ooe/heading
-  - ooe/sprite
-  - ooe/flex-wrap-listener
-  - ooe/compatibility
+  - core/once
 
 # Unset a bunch of stuff that leaks in from core that we don't use.
 libraries-override:
@@ -69,10 +63,10 @@ libraries-override:
 
 components:
   namespaces:
-    atoms: "node_modules/@psu-ooe"
-    molecules: "node_modules/@psu-ooe"
-    organisms: "node_modules/@psu-ooe"
-    ooe: "node_modules/@psu-ooe"
+    psu-ooe:
+      - node_modules/@psu-ooe
+    worldcampus:
+      - components
 
 dependencies:
   - components:components

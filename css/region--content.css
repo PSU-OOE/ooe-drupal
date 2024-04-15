@@ -1,0 +1,21 @@
+.main-content {
+  max-width: 119rem;
+  margin: 0 auto;
+  padding: 0 var(--page-side-padding)
+}
+
+@media(min-width: 950px) {
+  .main-content {
+    display: flex;
+    gap: 5%;
+    flex-direction: row-reverse
+  }
+
+  .main-content__first {
+    flex-basis: 75%
+  }
+
+  .main-content__second {
+    flex-basis: 25%
+  }
+}

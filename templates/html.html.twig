@@ -34,7 +34,8 @@
     <js-placeholder token="{{ placeholder_token }}">
   </head>
   <body{{ attributes }}>
-    {% include '@ooe/skip-link/skip-link.twig' with {
+    {{ attach_library('ooe/skip-link') }}
+    {% include '@psu-ooe/skip-link/skip-link.twig' with {
       text: 'Skip to main content',
       target_id: 'main-content',
     } only %}

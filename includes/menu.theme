@@ -8,8 +8,9 @@ function ooe_theme_suggestions_menu_alter(&$suggestions, array $variables) {
 
   // If the block is placed in a global theme region, generate a suggestion.
   if (isset($variables['attributes']['region'])) {
-    $suggestion = 'menu__' . $variables['menu_name'] . '__' . $variables['attributes']['region'];
-    $suggestion = str_replace('-', '_', $suggestion);
+    $suggestion = 'menu__' . str_replace('-', '_', $variables['attributes']['region']);
+    $suggestions[] = $suggestion;
+    $suggestion .= '__' . str_replace('-', '_', $variables['menu_name']);
     $suggestions[] = $suggestion;
   }
 

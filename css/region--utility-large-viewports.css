@@ -1,0 +1,29 @@
+.region--utility-large-viewports {
+  display: none
+}
+
+@media(min-width: 950px) {
+  .region--utility-large-viewports {
+    display: flex;
+    width: 100%;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-end
+  }
+}
+
+@media(min-width: 1024px) {
+  .region--utility-large-viewports {
+    gap: 2rem
+  }
+}
+
+.region--utility-large-viewports+.region--cta-large-viewports:not(:empty) {
+  margin-left: 3rem
+}
+
+@media(min-width: 1024px) {
+  .region--utility-large-viewports+.region--cta-large-viewports:not(:empty) {
+    margin-left: 4rem
+  }
+}

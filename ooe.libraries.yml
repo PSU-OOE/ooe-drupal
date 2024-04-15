@@ -4,74 +4,56 @@ drupal:
     base:
       css/styles.css: { }
 
-header:
-  version: 1.0.0
-  css:
-    layout:
-      css/header.css: { }
-
-main-content:
-  version: 1.0.0
-  css:
-    layout:
-      css/main-content.css: { }
-
-footer:
-  version: 1.0.0
-  css:
-    layout:
-      css/footer.css: { }
-
-region--announcements:
-  version: 1.0.0
-  css:
-    layout:
-      css/region--announcements.css: { }
-
-region--branding:
-  version: 1.0.0
-  css:
-    layout:
-      css/region--branding.css: { }
-
-region--utility:
-  version: 1.0.0
-  css:
-    layout:
-      css/region--utility.css: { }
-
-region--primary_nav:
-  version: 1.0.0
-  css:
-    layout:
-      css/region--primary-nav.css: { }
-
-region--before_content:
-  version: 1.0.0
-  css:
-    layout:
-      css/region--before-content.css: { }
-
 region--content:
   version: 1.0.0
   css:
     layout:
       css/region--content.css: { }
 
-region--aside:
+region--content-bottom-small-viewports:
   version: 1.0.0
   css:
     layout:
-      css/region--aside.css: { }
+      css/region--content-bottom-small-viewports.css: { }
 
-region--after_content:
+region--content-top:
   version: 1.0.0
   css:
     layout:
-      css/region--after-content.css: { }
+      css/region--content-top.css: { }
 
-compatibility:
+region--cta-large-viewports:
   version: 1.0.0
   css:
     layout:
-      css/compatibility.css: { }
+      css/region--cta-large-viewports.css: { }
+
+region--cta-small-viewports:
+  version: 1.0.0
+  css:
+    layout:
+      css/cta-small-viewports.css: { }
+
+region--overflow-large-viewports:
+  version: 1.0.0
+  css:
+    layout:
+      css/region--overflow-large-viewports.css: { }
+
+region--sidebar:
+  version: 1.0.0
+  css:
+    layout:
+      css/region--sidebar.css: { }
+
+region--utility-large-viewports:
+  version: 1.0.0
+  css:
+    layout:
+      css/region--utility-large-viewports.css: { }
+
+region--utility-small-viewports:
+  version: 1.0.0
+  css:
+    layout:
+      css/region--utility-small-viewports.css: { }

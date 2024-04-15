@@ -5,7 +5,7 @@
  */
 #}
 {% if content %}
-  {{ attach_library('ooe/region--' ~ region) }}
+  {{ attach_library('ooe/region--' ~ region|clean_class) }}
   <div{{ attributes }}>
     <div class="region__content">
       {{ content }}

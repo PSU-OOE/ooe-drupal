@@ -1,0 +1,86 @@
+{#
+/**
+ * @file
+ * Theme override for status messages.
+ *
+ * Displays status, error, and warning messages, grouped by type.
+ *
+ * An invisible heading identifies the messages for assistive technology.
+ * Sighted users see a colored box. See http://www.w3.org/TR/WCAG-TECHS/H69.html
+ * for info.
+ *
+ * Add an ARIA label to the contentinfo area so that assistive technology
+ * user agents will better describe this landmark.
+ *
+ * Available variables:
+ * - message_list: List of messages to be displayed, grouped by type.
+ * - status_headings: List of all status types.
+ * - attributes: HTML attributes for the element, including:
+ *   - class: HTML classes.
+ */
+#}
+{%
+  set roles = {
+    info: 'info',
+    error: 'error',
+    warning: 'warning',
+    status: 'status',
+  }
+%}
+
+{%
+  set region_labels = {
+    info: 'Informational message',
+    error: 'Error message',
+    warning: 'Warning message',
+    status: 'Status message'
+  }
+%}
+
+{%
+  set heading_labels = {
+    info: 'Informational messages',
+    error: 'Error messages',
+    warning: 'Warning messages',
+    status: 'Status messages'
+  }
+%}
+{{ attach_library('ooe/status-messages') }}
+{{ attach_library('ooe/alert') }}
+<div data-drupal-messages>
+  {% block messages %}
+    {% for type, messages in message_list %}
+      {%
+        set classes = [
+        'messages',
+        'messages--' ~ type,
+      ]
+      %}
+      <div role="region" aria-label="{{ region_labels[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
+        <div role="{{ roles[type] }}">
+        {% if type in heading_labels|keys %}
+          <h2 class="visually-hidden">{{ heading_labels[type] }}</h2>
+        {% endif %}
+
+          {% set content %}
+            {% if messages|length > 1 %}
+              <ul class="messages__list">
+                {% for message in messages %}
+                  <li class="messages__item">{{ message }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              {{ messages|first }}
+            {% endif %}
+          {% endset %}
+          {% include '@psu-ooe/alert/alert.twig' with {
+            content: content,
+            severity: roles[type],
+          } only %}
+        </div>
+      </div>
+      {# Remove type specific classes. #}
+      {% set attributes = attributes.removeClass(classes) %}
+    {% endfor %}
+  {% endblock messages %}
+</div>

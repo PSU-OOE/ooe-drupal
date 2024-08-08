@@ -1,0 +1,29 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.ui-menu {
+  border-top: _rem(.1) solid var(--white);
+  background-color: var(--form-element-background-color);
+  padding: var(--form-element-padding--horizontal);
+  position: absolute;
+  top: 0;
+  left: 0;
+  list-style-type: none;
+  margin: 0;
+
+  &-item-wrapper {
+    display: block;
+    padding: _rem(.5) _rem(1);
+    font-family: var(--form-element-font-family);
+    font-weight: var(--form-element-font-weight);
+    color: var(--form-element-text-color);
+    font-size: var(--form-element-font-size);
+    line-height: var(--form-element-line-height);
+    transition: background-color var(--transition-duration--default) linear,
+    color var(--transition-duration--default) linear;
+
+    &.ui-state-active {
+      background-color: var(--nittany-navy);
+      color: var(--white);
+    }
+  }
+}

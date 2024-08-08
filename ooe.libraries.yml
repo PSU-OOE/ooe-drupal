@@ -1,59 +1,556 @@
-drupal:
+# Form Styles
+form-actions:
   version: 1.0.0
   css:
     base:
-      css/styles.css: { }
+      components/form-actions/dist/styles.css: { }
 
-region--content:
+form-item:
+  version: 1.0.0
+  css:
+    base:
+      components/form-item/dist/styles.css: { }
+  dependencies:
+    - ooe/label
+
+form-type-text:
+  version: 1.0.0
+  dependencies:
+    - ooe/form-item
+    - ooe/input-text
+
+form-type-checkboxes:
+  version: 1.0.0
+  css:
+    base:
+      components/form-type-checkboxes/dist/styles.css: { }
+  js:
+    components/form-type-checkboxes/dist/scripts.js: { }
+  dependencies:
+    - ooe/form-type-checkbox
+    - core/drupal
+    - core/once
+
+form-type-checkbox:
+  version: 1.0.0
+  css:
+    base:
+      components/form-type-checkbox/dist/styles.css: { }
+  js:
+    components/form-type-checkbox/dist/scripts.js: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/input-checkbox
+    - core/drupal
+    - core/once
+
+form-type-radios:
+  version: 1.0.0
+  css:
+    base:
+      components/form-type-radios/dist/styles.css: { }
+  js:
+    components/form-type-radios/dist/scripts.js: { }
+  dependencies:
+    - ooe/form-type-radio
+    - core/drupal
+    - core/once
+
+form-type-radio:
+  version: 1.0.0
+  css:
+    base:
+      components/form-type-radio/dist/styles.css: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/input-radio
+
+form-type-select:
+  version: 1.0.0
+  css:
+    base:
+      components/form-type-select/dist/styles.css: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/select
+
+form-type-textarea:
+  version: 1.0.0
+  dependencies:
+    - ooe/form-item
+    - ooe/textarea
+
+form-type-color:
+  version: 1.0.0
+  css:
+    base:
+      components/form-type-color/dist/styles.css: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/input-color
+    - ooe/input-text
+
+form-type-email:
+  version: 1.0.0
+  css:
+    base:
+      components/form-type-email/dist/styles.css: { }
+  js:
+    components/form-type-email/dist/scripts.js: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/input-email
+    - core/announce
+    - core/drupal
+    - core/drupal.ajax
+    - core/once
+
+form-type-date:
+  version: 1.0.0
+  dependencies:
+    - ooe/form-item
+    - ooe/input-date
+
+form-type-time:
+  version: 1.0.0
+  dependencies:
+    - ooe/form-item
+    - ooe/input-time
+
+form-type-datetime:
+  version: 1.0.0
+  css:
+    base:
+      components/form-type-datetime/dist/styles.css: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/form-type-date
+    - ooe/form-type-time
+
+form-type-datelist:
+  version: 1.0.0
+  css:
+    base:
+      components/form-type-datelist/dist/styles.css: { }
+  js:
+    components/form-type-datelist/dist/scripts.js: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/select
+    - ooe/input-text
+    - core/drupal
+    - core/once
+
+form-type-entity-autocomplete:
+  version: 1.0.0
+  css:
+    base:
+      components/form-type-entity-autocomplete/dist/styles.css: { }
+  dependencies:
+    # Note - the autocomplete dependency comes from core.
+    - ooe/form-type-text
+    - ooe/spinner
+
+file-managed-file:
+  version: 1.0.0
+  css:
+    base:
+      components/file-managed-file/dist/styles.css: { }
+  js:
+    components/file-managed-file/dist/scripts.js: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/input-file
+    - ooe/status-messages
+    - core/drupal
+    - core/once
+
+form-type-details:
+  version: 1.0.0
+  css:
+    base:
+      components/form-type-details/dist/styles.css: { }
+  dependencies:
+    - ooe/details
+
+form-type-managed-file:
+  version: 1.0.0
+  css:
+    base:
+      components/form-type-managed-file/dist/styles.css: { }
+  dependencies:
+    - ooe/file-managed-file
+
+select2:
+  version: 1.0.0
+  css:
+    component:
+      components/select2/dist/styles.css: { }
+
+# Webform styles
+webform-required:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-required/dist/styles.css: { }
+
+webform-element-webform-markup:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-markup/dist/styles.css: { }
+  dependencies:
+    - ooe/form-item
+
+webform-element-webform-autocomplete:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-autocomplete/dist/styles.css: { }
+  dependencies:
+    # Note - the autocomplete dependency comes from core.
+    - ooe/form-type-text
+    - ooe/spinner
+
+webform-element-text-counter:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-text-counter/dist/styles.css: { }
+
+webform-actions:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-actions/dist/styles.css: { }
+  dependencies:
+    - ooe/form-actions
+
+webform-element-checkboxes:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-checkboxes/dist/styles.css: { }
+  dependencies:
+    - ooe/fieldset
+    - ooe/legend
+    - ooe/form-type-checkboxes
+
+webform-element-webform-checkboxes-other:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-checkboxes-other/dist/styles.css: { }
+  dependencies:
+    - ooe/fieldset
+    - ooe/legend
+    - ooe/form-type-checkboxes
+    - ooe/form-type-text
+
+webform-element-radios:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-radios/dist/styles.css: { }
+  dependencies:
+    - ooe/fieldset
+    - ooe/legend
+    - ooe/form-type-radios
+
+webform-element-webform-radios-other:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-radios-other/dist/styles.css: { }
+  dependencies:
+    - ooe/fieldset
+    - ooe/legend
+    - ooe/form-type-radios
+    - ooe/form-type-text
+
+webform-element-webform-select-other:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-select-other/dist/styles.css: { }
+  dependencies:
+    - ooe/fieldset
+    - ooe/legend
+    - ooe/form-type-select
+    - ooe/form-type-text
+
+webform-element-range:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-range/dist/styles.css: { }
+  js:
+    components/webform-element-range/dist/scripts.js: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/input-range
+    - ooe/input-text
+    - core/drupal
+    - core/once
+
+webform-options-display-buttons:
   version: 1.0.0
   css:
     layout:
-      css/region--content.css: { }
+      components/webform-options-display-buttons/dist/styles.css: { }
 
-region--content-bottom-small-viewports:
+webform-options-display-columns:
   version: 1.0.0
   css:
     layout:
-      css/region--content-bottom-small-viewports.css: { }
+      components/webform-options-display-columns/dist/styles.css: { }
 
-region--content-top:
+webform-element-webform-scale:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-scale/dist/styles.css: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/radio
+
+webform-element-webform-rating:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-rating/dist/styles.css: { }
+  dependencies:
+    - ooe/form-item
+
+webform-element-webform-entity-checkboxes:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-entity-checkboxes/dist/styles.css: { }
+  dependencies:
+    - ooe/fieldset
+    - ooe/legend
+    - ooe/form-type-checkboxes
+
+
+webform-element-webform-entity-radios:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-entity-radios/dist/styles.css: { }
+  dependencies:
+    - ooe/fieldset
+    - ooe/legend
+    - ooe/form-type-radios
+
+webform-progress:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-progress/dist/styles.css: { }
+
+webform-progress-tracker:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-progress-tracker/dist/styles.css: { }
+  dependencies:
+    - ooe/heading
+
+webform-element-webform-message:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-message/dist/styles.css: { }
+
+webform-element-webform-term-checkboxes:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-term-checkboxes/dist/styles.css: { }
+  dependencies:
+    - ooe/fieldset
+    - ooe/legend
+    - ooe/form-type-checkboxes
+
+webform-element-webform-height:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-height/dist/styles.css: { }
+
+webform-element-webform-email-confirm:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-email-confirm/dist/styles.css: { }
+  js:
+    components/webform-element-webform-email-confirm/dist/scripts.js: { }
+  dependencies:
+    - ooe/form-type-email
+    - core/drupal
+    - core/once
+
+webform-element-webform-terms-of-service:
+  version: 1.0.0
+  js:
+    components/webform-element-webform-terms-of-service/dist/scripts.js: { }
+  dependencies:
+    - ooe/form-type-checkbox
+    - ooe/modal
+
+webform-element-fieldset:
+  version: 1.0.0
+  css:
+    component:
+      components/webform-element-fieldset/dist/styles.css: { }
+
+webform-element-webform-section:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-webform-section/dist/styles.css: { }
+
+webform-element-description:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-description/dist/styles.css: { }
+
+webform-element-intl-tel:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-element-intl-tel/dist/styles.css: { }
+
+webform-ajax:
+  version: 1.0.0
+  css:
+    base:
+      components/webform-ajax/dist/styles.css: { }
+
+webform-element-webform-flexbox:
   version: 1.0.0
   css:
     layout:
-      css/region--content-top.css: { }
+      components/webform-element-webform-flexbox/dist/styles.css: { }
 
-region--cta-large-viewports:
+webform-element-webform-same:
   version: 1.0.0
   css:
-    layout:
-      css/region--cta-large-viewports.css: { }
+    base:
+      components/webform-element-webform-same/dist/styles.css: { }
 
-region--cta-small-viewports:
+webform-element-recaptcha:
   version: 1.0.0
   css:
-    layout:
-      css/cta-small-viewports.css: { }
+    base:
+      components/webform-element-recaptcha/dist/styles.css: { }
+  dependencies:
+    - ooe/form-item
 
-region--overflow-large-viewports:
+webform-element-psu-address:
   version: 1.0.0
   css:
-    layout:
-      css/region--overflow-large-viewports.css: { }
+    base:
+      components/webform-element-psu-address/dist/styles.css: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/fieldset
+    - ooe/select
+    - ooe/input-text
 
-region--sidebar:
+webform-element-psu-military-select:
   version: 1.0.0
   css:
-    layout:
-      css/region--sidebar.css: { }
+    base:
+      components/webform-element-psu-military-select/dist/styles.css: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/fieldset
+    - ooe/select
 
-region--utility-large-viewports:
+webform-element-psu-program-select:
   version: 1.0.0
   css:
-    layout:
-      css/region--utility-large-viewports.css: { }
+    base:
+      components/webform-element-psu-program-select/dist/styles.css: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/fieldset
+    - ooe/select
+    - ooe/webform-element-description
 
-region--utility-small-viewports:
+webform-element-webform-address:
   version: 1.0.0
   css:
-    layout:
-      css/region--utility-small-viewports.css: { }
+    base:
+      components/webform-element-webform-address/dist/styles.css: { }
+  dependencies:
+    - ooe/form-item
+    - ooe/input-select
+    - ooe/input-text
+
+webform-element-webform-audio-file:
+  version: 1.0.0
+  dependencies:
+    - ooe/form-type-managed-file
+
+webform-element-webform-image-file:
+  version: 1.0.0
+  dependencies:
+    - ooe/form-type-managed-file
+
+webform-element-webform-video-file:
+  version: 1.0.0
+  dependencies:
+    - ooe/form-type-managed-file
+
+webform-element-webform-document-file:
+  version: 1.0.0
+  dependencies:
+    - ooe/form-type-managed-file
+
+ajax-progress-throbber:
+  version: 1.0.0
+  js:
+    components/ajax-progress-throbber/dist/scripts.js: { }
+  drupalSettings:
+    ooe:
+      # This placeholder value will be set by ooe_js_settings_alter().
+      spinner_component: null
+  dependencies:
+    - ooe/spinner
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+clientside-validation:
+  version: 1.0.0
+  js:
+    components/clientside-validation/dist/scripts.js: { }
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/jquery
+    - core/drupal.states
+
+status-messages:
+  version: 1.0.0
+  css:
+    component:
+      components/status-messages/dist/styles.css: { }
+  js:
+    components/status-messages/dist/scripts.js: { }
+  dependencies:
+    - ooe/alert
+
+admin-tabs:
+  version: 1.0.0
+  css:
+    component:
+      upstream-components/tabs/dist/styles.css: {}
+  js:
+    upstream-components/tabs/dist/scripts.js: {}
+  dependencies:
+    - core/drupal

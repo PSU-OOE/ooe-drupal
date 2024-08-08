@@ -1,0 +1,21 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.form-type-radio {
+  display: flex;
+  gap: _rem(1);
+
+  > .form-item__element-wrapper > .form-item__element {
+    flex-shrink: 0;
+
+    & ~ * {
+      align-self: baseline;
+    }
+  }
+
+  // Close up the would-be gap between the input and label.
+  label {
+    margin: _rem(.3) 0 0 _rem(-1);
+    padding-left: _rem(1);
+    font-weight: var(--form-element-font-weight);
+  }
+}

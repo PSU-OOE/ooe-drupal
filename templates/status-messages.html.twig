@@ -22,6 +22,7 @@
 {%
   set roles = {
     info: 'info',
+    form_error: 'error',
     error: 'error',
     warning: 'warning',
     status: 'status',
@@ -31,6 +32,7 @@
 {%
   set region_labels = {
     info: 'Informational message',
+    form_error: 'Form input issues',
     error: 'Error message',
     warning: 'Warning message',
     status: 'Status message'
@@ -40,6 +42,7 @@
 {%
   set heading_labels = {
     info: 'Informational messages',
+    form_error: 'Form input issues',
     error: 'Error messages',
     warning: 'Warning messages',
     status: 'Status messages'
@@ -47,40 +50,30 @@
 %}
 {{ attach_library('ooe/status-messages') }}
 {{ attach_library('ooe/alert') }}
-<div data-drupal-messages>
+<div class="messages" data-drupal-messages>
   {% block messages %}
     {% for type, messages in message_list %}
-      {%
-        set classes = [
-        'messages',
-        'messages--' ~ type,
-      ]
-      %}
-      <div role="region" aria-label="{{ region_labels[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
-        <div role="{{ roles[type] }}">
-        {% if type in heading_labels|keys %}
-          <h2 class="visually-hidden">{{ heading_labels[type] }}</h2>
-        {% endif %}
+      <div role="region" aria-label="{{ region_labels[type] }}"{{ attributes|without('role', 'aria-label') }}>
+      {% if type in heading_labels|keys %}
+        <h2 class="visually-hidden">{{ heading_labels[type] }}</h2>
+      {% endif %}
 
-          {% set content %}
-            {% if messages|length > 1 %}
-              <ul class="messages__list">
-                {% for message in messages %}
-                  <li class="messages__item">{{ message }}</li>
-                {% endfor %}
-              </ul>
-            {% else %}
-              {{ messages|first }}
-            {% endif %}
-          {% endset %}
-          {% include '@psu-ooe/alert/alert.twig' with {
-            content: content,
-            severity: roles[type],
-          } only %}
-        </div>
+        {% set content %}
+          {% if messages|length > 1 %}
+            <ul class="messages__list">
+              {% for message in messages %}
+                <li class="messages__item">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            {{ messages|first }}
+          {% endif %}
+        {% endset %}
+        {% include '@psu-ooe/alert/alert.twig' with {
+          content: content,
+          severity: roles[type],
+        } only %}
       </div>
-      {# Remove type specific classes. #}
-      {% set attributes = attributes.removeClass(classes) %}
     {% endfor %}
   {% endblock messages %}
 </div>

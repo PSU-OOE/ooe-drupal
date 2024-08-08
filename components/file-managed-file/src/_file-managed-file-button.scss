@@ -1,0 +1,150 @@
+.form-type-managed-file-button {
+  border-radius: var(--form-element-border-radius--rounded);
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: _rem(0);
+  max-width: 100%;
+
+  &, &:is([data-light] *) {
+    background-color: var(--form-element-background-color);
+  }
+
+  &:is([data-dark] *) {
+    background-color: var(--nittany-navy);
+  }
+
+  &:has(.form-item--error-message) {
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+
+    .form-file-wrapper {
+      margin-top: _rem(.5);
+      border-radius: 0;
+    }
+  }
+
+  > .form-file-wrapper {
+    width: auto;
+  }
+
+  > .file {
+    padding-left: _rem(1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 0 1 auto;
+
+    &, &:is([data-light] *) {
+      &, & > a, & ~ span {
+        color: var(--form-element-text-color);
+      }
+    }
+
+    &:is([data-dark] *) {
+      &, & > a {
+        color: var(--white);
+      }
+    }
+
+    ~ span {
+      flex: 1 0 auto;
+    }
+  }
+
+  > .webform-file-button,
+  > .form-submit[value='Remove'] {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    border: none;
+    border-radius: _rem(.5);
+    font-family: var(--form-element-font-family);
+    font-weight: var(--font-weight--semibold);
+    font-size: var(--form-element-font-size);
+    line-height: var(--form-element-line-height);
+    padding: var(--form-element-padding--vertical) var(--form-element-padding--horizontal);
+    transition: background-color var(--transition-duration--default) linear,
+                color var(--transition-duration--default) linear;
+
+    &, &:is([data-light] *) {
+      background-color: var(--pa-link);
+      color: var(--white);
+
+      &:hover {
+        background-color: var(--nittany-navy);
+      }
+    }
+
+    &:is([data-dark] *) {
+      background-color: var(--pa-link-light);
+      color: var(--beaver-blue);
+
+      &:hover {
+        background-color: var(--keystone-light);
+      }
+    }
+  }
+
+  > .form-submit[value='Remove'] {
+    margin-left: _rem(1);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover, &:focus-visible {
+      &, &:is([data-light] *) {
+        background-color: var(--nittany-navy);
+        color: var(--white);
+      }
+
+      &:is([data-dark] *) {
+        background-color: var(--keystone-light);
+        color: var(--beaver-blue);
+      }
+    }
+    &:focus-visible {
+      outline: _rem(.2) solid var(--sky-blue);
+      outline-offset: _rem(.2);
+    }
+  }
+
+  &:has(.webform-file-button-input:focus-visible) {
+    > .webform-file-button {
+      outline: _rem(.2) solid var(--sky-blue);
+      outline-offset: _rem(.2);
+
+      &, &:is([data-light] *) {
+        background-color: var(--nittany-navy);
+        color: var(--white);
+      }
+
+      &:is([data-dark] *) {
+        background-color: var(--keystone-light);
+        color: var(--beaver-blue);
+      }
+    }
+  }
+
+  &:has(.webform-file-button-input:disabled) {
+    .webform-file-button {
+      cursor: not-allowed;
+    }
+
+    &, &:is([data-light] *) {
+      > .webform-file-button {
+        background-color: var(--limestone);
+        color: color-mix(in srgb, transparent, var(--nittany-navy) 80%);
+      }
+    }
+
+    &:is([data-dark] *) {
+      > .webform-file-button {
+        background-color: var(--limestone);
+        color: color-mix(in srgb, transparent, var(--nittany-navy) 80%);
+      }
+    }
+  }
+}

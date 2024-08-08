@@ -1,0 +1,17 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-type-webform-entity-radios {
+
+  > legend {
+    margin-bottom: _rem(.8);
+  }
+  > .fieldset-wrapper {
+    > .form-type-radios + .form-item__description {
+      margin-top: _rem(.5);
+    }
+
+    > .form-item--error-message {
+      margin-top: _rem(1.5);
+    }
+  }
+}

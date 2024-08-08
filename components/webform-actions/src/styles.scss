@@ -1,0 +1,84 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: _rem(1);
+  justify-content: space-between;
+
+  &--wizard {
+
+    .webform-button {
+      &--submit, &--update, &--preview, &--next {
+        margin-left: auto;
+      }
+
+      &--wizard-previous {
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+.webform-button {
+  min-width: fit-content;
+  width: _rem(17);
+  max-width: 50%;
+  padding-left: _rem(2);
+  padding-right: _rem(2);
+
+  > .cta-block__icon {
+    font-size: var(--font-size--msmall);
+
+    > .ajax-progress-throbber {
+      margin-right: _rem(-.6);
+      margin-top: _rem(-.1);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    > .cta-block__icon >.sprite {
+      display: none;
+    }
+
+    &, &:is([data-light] *) {
+      background-color: color-mix(in srgb, transparent, var(--limestone) 60%);
+      color: color-mix(in srgb, transparent, var(--slate) 90%);
+    }
+
+    &:is([data-dark] *) {
+      background-color: var(--limestone);
+      color: color-mix(in srgb, transparent, var(--nittany-navy) 80%);
+    }
+  }
+
+  &--previous {
+    background-color: transparent;
+    color: var(--if-light, var(--beaver-blue)) var(--if-dark, var(--white));
+
+    &:hover, &:focus-visible {
+      background-color: var(--if-light, var(--nittany-navy)) var(--if-dark, var(--keystone-light));
+      color: var(--if-light, var(--white)) var(--if-dark, var(--nittany-navy));
+    }
+
+    &:disabled {
+      &, &:is([data-light] *) {
+        background-color: transparent;
+        color: color-mix(in srgb, transparent, var(--slate) 80%);
+      }
+
+      &:is([data-dark] *) {
+        background-color: transparent;
+        color: color-mix(in srgb, transparent, var(--white) 60%);
+      }
+    }
+
+    .ajax-progress-throbber {
+      position: relative;
+      left: _rem(-0.6);
+    }
+  }
+}

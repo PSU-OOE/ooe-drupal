@@ -1,0 +1,79 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.form-item {
+  margin-bottom: var(--form-element-margin--vertical);
+
+  &__prefix, &__suffix {
+    font-family: var(--form-element-font-family);
+    font-weight: var(--form-element-font-weight);
+    color: var(--form-label-text-color);
+    font-size: var(--form-element-font-size);
+    line-height: var(--form-element-line-height);
+    padding: var(--form-element-padding--vertical) 0;
+  }
+
+  &__label {
+    display: flex;
+    align-items: flex-start;
+    gap: _rem(.5);
+  }
+
+  &__element-wrapper {
+    display: flex;
+    column-gap: _rem(.5);
+    flex-wrap: nowrap;
+  }
+
+  &__element {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 100%;
+
+    // If :has is not supported; fall back to design system provided focus rings.
+    &:has(> *:focus-visible) {
+      outline: _rem(.2) solid var(--sky-blue);
+      outline-offset: _rem(.2);
+
+      > *:focus-visible {
+        outline: none;
+      }
+    }
+  }
+
+  &__label:not(.visually-hidden) + &__element-wrapper,
+  &__description + &__element-wrapper,
+  &__label:not(.visually-hidden) + &__description,
+  &__element-wrapper + &__label,
+  &__element-wrapper + &__description,
+  &__element-wrapper + &__more,
+  &--error-message + &__description,
+  &--error-message + &__more,
+  &--error-message + &__label {
+    margin-top: _rem(.5);
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: _rem(.5);
+    flex-basis: 100%;
+  }
+
+  .container-inline {
+    margin: 0;
+
+    & > div, & > label {
+      display: inline-flex;
+    }
+  }
+
+  // Add a not-allowed cursor if the form item's input is disabled.
+  &--disabled &__label {
+    cursor: not-allowed;
+  }
+}
+
+@import 'inline-errors';
+@import 'inline-warnings';
+@import 'required-indicator';

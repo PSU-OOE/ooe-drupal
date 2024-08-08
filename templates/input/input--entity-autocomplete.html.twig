@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Default theme implementation for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ *
+ * @ingroup themeable
+ */
+#}
+<input{{ attributes }} />{{ children }}
+<div class="autocomplete__spinner">
+  {% include '@psu-ooe/spinner/spinner.twig' with {
+    size: 'xsmall',
+    loading_text: 'Searching for ' ~ element['#target_type'] ~ ' entities...',
+  } only %}
+</div>

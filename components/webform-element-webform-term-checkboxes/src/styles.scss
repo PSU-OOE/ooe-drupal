@@ -1,0 +1,46 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-type-webform-term-checkboxes {
+
+  > legend {
+    margin-bottom: _rem(.5);
+  }
+
+  > .fieldset-wrapper {
+
+    > .form-type-checkboxes {
+      & + .form-item__description {
+        margin-top: _rem(.5);
+      }
+
+      // Term checkboxes can render a prefix to indent hierarchical options. In
+      // order to prevent vertical misalignment, we can nuke the padding.
+      > .form-type-checkbox .form-item__prefix {
+        padding: 0;
+      }
+    }
+
+    > .form-item--error-message {
+      margin-top: _rem(1.5);
+    }
+  }
+
+  &.webform-term-checkboxes-scroll {
+    > .fieldset-wrapper {
+      > .form-type-checkboxes {
+        overflow: auto;
+        max-height: _rem(18);
+        padding: _rem(1);
+        border: _rem(.1) solid var(--form-element-border-color);
+      }
+
+      > .form-item--error-message {
+        margin-top: _rem(0);
+      }
+    }
+
+    &.error > .fieldset-wrapper > .form-type-checkboxes {
+      border-color: var(--error-red);
+    }
+  }
+}

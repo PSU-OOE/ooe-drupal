@@ -1,0 +1,7 @@
+{{ attach_library('ooe/pager') }}
+{% include '@psu-ooe/pager/pager.twig' with {
+  heading_id: heading_id,
+  heading: 'Pagination',
+  items: items,
+  current: current
+} only %}

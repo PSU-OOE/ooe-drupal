@@ -1,0 +1,23 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.form-type-datetime {
+
+  > .form-item__element-wrapper > .form-item__element > .container-inline {
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: _rem(1.5);
+
+    > .form-item {
+      flex: 0;
+      margin-bottom: 0;
+
+      > .form-item__element-wrapper {
+        width: 100%;
+
+        > .form-item__element > input {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

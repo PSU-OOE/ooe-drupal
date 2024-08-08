@@ -1,0 +1,37 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+@import '../../../upstream-components/base/src/scss/imports/layout';
+
+.webform-flexbox {
+  display: flex;
+  column-gap: _rem(1.5);
+  flex-direction: column;
+  margin: 0;
+
+  @include bp(s) {
+    flex-direction: row;
+  }
+
+  // Make sure flexbox is always using 'display: flex' when toggled via #states.
+  // @see https://stackoverflow.com/questions/38491653/jquery-show-a-flex-box/4121
+  &.js-webform-states-hidden[style*="display: block"] {
+    display: flex !important;
+  }
+
+  .webform-flexbox--flex-start {
+    align-items: flex-start;
+  }
+
+  .webform-flexbox--flex-end {
+    align-items: flex-end;
+  }
+
+  .webform-flexbox--center {
+    align-items: center;
+  }
+
+  @for $i from 1 through 12 {
+    .webform-flex--#{$i} {
+      flex: $i;
+    }
+  }
+}

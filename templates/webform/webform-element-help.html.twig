@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Theme implementation for webform element help
+ *
+ * Available variables
+ * - element: form element
+ * - help: Help content.
+ * - help_icon: Help icon.
+ *
+ * @see template_preprocess_webform_element_help()
+ *
+ * @ingroup themeable
+ */
+#}
+{% apply spaceless %}
+{{ attach_library('webform/webform.element.help') }}
+{{ attach_library('worldcampus/webform-element-help') }}
+<span{{ attributes }}>{% include '@psu-ooe/sprite/sprite.twig' with { name: 'fa-circle-question' } only %}</span>
+{% endapply %}

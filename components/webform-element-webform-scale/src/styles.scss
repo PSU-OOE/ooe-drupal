@@ -1,0 +1,137 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-type-webform-scale {
+
+  > legend {
+    margin-bottom: _rem(.5);
+  }
+
+  > .fieldset-wrapper > .form-type-radios {
+    > .webform-scale {
+      display: flex;
+      flex-direction: column;
+      gap: _rem(1);
+      width: fit-content;
+
+      > .webform-scale-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: _rem(1);
+
+        > .webform-scale-option > .form-type-radio {
+          margin: 0;
+          gap: 0;
+
+          .form-item__element {
+            outline: none;
+          }
+
+          > label {
+            display: flex;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 0;
+            width: _rem(4.4);
+            height: _rem(4.4);
+            font-weight: var(--font-weight--bold);
+            font-size: var(--font-size--xlarge);
+            line-height: var(--line-height--nospace);
+            border-radius: 50%;
+            transition: background-color var(--transition-duration--default) linear,
+            border-color var(--transition-duration--default) linear,
+            color var(--transition-duration--default) linear;
+
+            &:where(:has(:focus-visible) + label) {
+              outline: _rem(.2) solid var(--sky-blue);
+              outline-offset: _rem(.2);
+            }
+          }
+        }
+      }
+
+      > .webform-scale-text {
+        display: flex;
+        gap: _rem(2);
+        justify-content: space-between;
+        color: var(--form-label-text-color);
+      }
+    }
+
+    + .form-item--error-message {
+      margin-top: _rem(.5);
+    }
+  }
+
+  &, &:is([data-light] *) {
+    > .fieldset-wrapper > .form-type-radios > .webform-scale > .webform-scale-options > .webform-scale-option > .form-type-radio > label {
+
+      border: _rem(.1) solid var(--pa-link);
+      color: var(--beaver-blue);
+      background-color: var(--white);
+
+
+      &:where(:has(:checked) + label) {
+        background-color: var(--beaver-blue);
+        border-color: var(--beaver-blue);
+        color: var(--white);
+      }
+
+      @media (any-hover: hover) {
+        &:where(:not(:has(:disabled)) + label):hover {
+          background-color: var(--pa-link-light);
+          border-color: var(--beaver-blue);
+          color: var(--beaver-blue);
+        }
+      }
+
+      &:where(:has(:disabled) + label) {
+        background: var(--form-element-disabled-background-color);
+        border-color: var(--limestone);
+        color: var(--form-element-disabled-text-color);
+      }
+
+      &:where(:has(:disabled:checked) + label) {
+        background: color-mix(in srgb, transparent, var(--limestone) 80%);
+        border-color: color-mix(in srgb, transparent, var(--slate) 60%);
+        color: var(--slate);
+      }
+    }
+  }
+
+  &:is([data-dark] *) {
+    > .fieldset-wrapper > .form-type-radios > .webform-scale > .webform-scale-options > .webform-scale-option > .form-type-radio > label {
+
+      border: _rem(.1) solid var(--light-grey);
+      color: var(--white);
+      background-color: var(--beaver-blue);
+
+      &:where(:has(:checked) + label) {
+        background-color: var(--white);
+        border-color: var(--white);
+        color: var(--beaver-blue);
+      }
+
+      @media (any-hover: hover) {
+        &:where(:not(:has(:disabled)) + label):hover {
+          background-color: var(--pa-link);
+          border-color: var(--white);
+          color: var(--white);
+        }
+      }
+
+      &:where(:has(:disabled) + label) {
+        background: var(--slate);
+        border-color: var(--limestone);
+        color: var(--slate-light);
+      }
+
+      &:where(:has(:disabled:checked) + label) {
+        background: var(--limestone);
+        border-color: var(--slate-light);
+        color: color-mix(in srgb, transparent, var(--nittany-navy) 80%);
+      }
+    }
+  }
+}

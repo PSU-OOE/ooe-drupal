@@ -1,9 +1,0 @@
-.region--content-top {
-  margin-bottom: 3rem
-}
-
-@media(min-width: 950px) {
-  .region--content-top {
-    margin-bottom: 5rem
-  }
-}

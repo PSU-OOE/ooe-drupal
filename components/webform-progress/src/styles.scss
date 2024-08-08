@@ -1,0 +1,28 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-progress {
+  margin-bottom: var(--webform-progress-tracker-margin--vertical);
+
+  &__status {
+    display: flex;
+    gap: _rem(1);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__summary, &__percentage {
+    font-family: var(--font-family--default);
+    font-weight: var(--font-weight--regular);
+    color: var(--form-label-text-color);
+    font-size: var(--font-size--xsmall);
+    line-height: var(--line-height--xsnug);
+  }
+
+  &__summary {
+    margin-left: auto;
+  }
+
+  &__percentage:not(&__summary + &__percentage) {
+    margin-left: auto;
+  }
+}

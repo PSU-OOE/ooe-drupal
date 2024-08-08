@@ -1,0 +1,9 @@
+.form-item--error-message {
+  background-color: var(--form-error-background-color);
+  color: var(--form-error-text-color);
+  font-family: var(--form-label-font-family);
+  font-weight: var(--font-weight--medium);
+  font-size: var(--font-size--2xsmall);
+  line-height: var(--line-height--xsnug);
+  padding: var(--form-error-padding--vertical) var(--form-error-padding--horizontal);
+}

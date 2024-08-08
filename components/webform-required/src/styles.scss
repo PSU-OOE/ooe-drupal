@@ -1,0 +1,16 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-required {
+  display: flex;
+  gap: _rem(.5);
+  font-weight: var(--font-weight--regular);
+  color: var(--form-label-text-color);
+  font-size: var(--form-label-font-size);
+  line-height: var(--form-label-line-height);
+  font-style: italic;
+
+  // This required indicator comes before the label.
+  > .form-required > .form-required-asterisk::after {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,36 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-type-fieldset {
+  margin-bottom: 0;
+
+  > legend:not(:has(.fieldset-legend.visually-hidden)) {
+    font-family: var(--font-family--headings);
+    font-size: var(--font-size--mlarge);
+    font-weight: var(--font-weight--medium);
+    letter-spacing: var(--letter-spacing--medium);
+    line-height: var(--line-height--snug);
+    margin: 0 0 _rem(1.5);
+
+    > .fieldset-legend.form-required .form-required-asterisk::after {
+      margin-left: _rem(.5);
+      font-size: inherit;
+    }
+  }
+
+  > .fieldset-wrapper {
+    > .form-item__description:first-child {
+      margin-bottom: var(--form-element-margin--vertical);
+    }
+  }
+
+  // Stealthed fieldsets.
+  &.fieldset-legend-stealth {
+    > legend:not(:has(.fieldset-legend.visually-hidden)) {
+      font-family: var(--form-label-font-family);
+      font-weight: var(--form-label-font-weight);
+      font-size: var(--form-label-font-size);
+      line-height: var(--form-label-line-height);
+      margin: 0 0 _rem(.5);
+    }
+  }
+}

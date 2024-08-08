@@ -1,0 +1,19 @@
+.form-type-details {
+
+  // Nuke the default margin if it's details + details.
+  &:has( + .form-type-details) {
+    margin-bottom: 0;
+  }
+
+  > summary {
+    // Ensure that required asterisks are the proper size.
+    &.form-required .form-required-asterisk::after {
+      font-size: inherit;
+    }
+
+    // Hide empty summaries.
+    > .summary:empty {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.text-count-wrapper {
+  color: var(--form-label-text-color);
+  font-size: var(--font-size--2xsmall);
+  line-height: var(--line-height--xsnug);
+  font-family: var(--form-label-font-family);
+  font-weight: var(--form-label-font-weight);
+  margin-top: _rem(.5);
+
+  &.webform-counter-warning {
+    color: var(--form-element-text-count-error-color);
+  }
+}

@@ -1,16 +1,14 @@
 <?php
+
 /**
  * @file
- * ooe.theme
+ * Hook implementations for the ooe theme.
  */
 
 use Drupal\Component\Serialization\Json;
 
-// Include each theme file.
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'html.theme';
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'region.theme';
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'block.theme';
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'menu.theme';
+require_once implode(DIRECTORY_SEPARATOR, [__DIR__, 'includes', 'ooe.preprocess.inc']);
+require_once implode(DIRECTORY_SEPARATOR, [__DIR__, 'includes', 'ooe.suggestions.inc']);
 
 /**
  * Implements hook_library_info_build().
@@ -33,8 +31,7 @@ function ooe_library_info_build(): array {
   $theme_path = $extension_theme_list->getPath('ooe');
   $components_path = implode(DIRECTORY_SEPARATOR, [
     $theme_path,
-    'node_modules',
-    '@psu-ooe',
+    'upstream-components',
   ]);
   $components = new FilesystemIterator($components_path, FilesystemIterator::SKIP_DOTS);
   foreach ($components as $component) {
@@ -49,7 +46,7 @@ function ooe_library_info_build(): array {
       'scripts.js',
     ]);
     if (file_exists($js_path)) {
-      $libraries[$component->getFilename()]['js'] = [str_replace($theme_path.'/', '', $js_path) => []];
+      $libraries[$component->getFilename()]['js'] = [str_replace($theme_path . '/', '', $js_path) => []];
     }
 
     // Resolve CSS files.
@@ -59,7 +56,7 @@ function ooe_library_info_build(): array {
       'styles.css',
     ]);
     if (file_exists($css_path)) {
-      $libraries[$component->getFilename()]['css']['base'] = [str_replace($theme_path.'/', '', $css_path) => []];
+      $libraries[$component->getFilename()]['css']['component'] = [str_replace($theme_path . '/', '', $css_path) => []];
     }
 
     // Resolve dependencies.
@@ -79,4 +76,23 @@ function ooe_library_info_build(): array {
     }
   }
   return $libraries;
+}
+
+/**
+ * Implements hook_js_settings_alter().
+ */
+function ooe_js_settings_alter(array &$settings): void {
+
+  if (array_key_exists('ooe', $settings) && array_key_exists('spinner_component', $settings['ooe'])) {
+    $spinner = [
+      '#type' => 'inline_template',
+      '#template' => <<<TEMPLATE
+        {% include '@psu-ooe/spinner/spinner.twig' with {
+        loading_text: 'Loading...',
+        size: 'xsmall'
+      } only %}
+    TEMPLATE,
+    ];
+    $settings['ooe']['spinner_component'] = \Drupal::service('renderer')->renderPlain($spinner);
+  }
 }

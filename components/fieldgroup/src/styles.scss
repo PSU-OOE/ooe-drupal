@@ -1,0 +1,24 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.fieldgroup {
+
+  > legend > .fieldset-legend {
+    display: flex;
+    gap: _rem(.5);
+  }
+
+  > .fieldset-wrapper {
+    > .field-prefix, > .field-suffix {
+      color: var(--form-label-text-color);
+      display: inline-block;
+    }
+
+    > .field-prefix {
+      margin-bottom: _rem(.5);
+    }
+
+    > .field-suffix {
+      margin-top: _rem(.5);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-message {
+  position: relative;
+
+  &__link {
+    position: absolute;
+    right: 0;
+    display: block;
+    font-size: _rem(2.4);
+    line-height: var(--line-height--nospace);
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,13 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-options-display-two-columns > .form-item {
+  flex: calc(50% - _rem(1.25));
+}
+
+.webform-options-display-three-columns > .form-item {
+  flex: calc((100% / 3) - _rem(2.5));
+}
+
+.webform-options-display-side-by-side > .form-item {
+  flex: 0 1 auto;
+}

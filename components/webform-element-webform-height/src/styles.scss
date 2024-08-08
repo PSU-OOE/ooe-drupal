@@ -1,0 +1,14 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-type-webform-height {
+  > legend {
+    margin-bottom: _rem(.5);
+  }
+
+  > .fieldset-wrapper > .form--inline {
+    > .form-item-webform-height-feet,
+    > .form-item-webform-height-inches {
+      margin-bottom: 0;
+    }
+  }
+}

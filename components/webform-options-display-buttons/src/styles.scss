@@ -1,0 +1,312 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-options-display-buttons-wrapper {
+
+  .webform-options-display-buttons-label {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: var(--form-element-padding--vertical) _rem(2.5);
+    border: _rem(.1) solid var(--pa-link);
+    background: var(--white);
+    border-radius: var(--form-element-border-radius--rounded);
+    font-family: var(--form-element-font-family);
+    font-weight: var(--form-element-font-weight);
+    color: var(--form-element-text-color);
+    font-size: var(--form-element-font-size);
+    line-height: var(--form-element-line-height);
+  }
+}
+
+.webform-options-display-buttons {
+  display: flex;
+  gap: _rem(1.5);
+  flex-wrap: wrap;
+
+  & > .webform-options-display-buttons-wrapper {
+    flex: 1;
+
+    & > .form-item {
+      margin: 0;
+      height: 100%;
+    }
+  }
+
+
+  &-horizontal > .webform-options-display-buttons-wrapper {
+    flex: 0;
+  }
+
+  &-vertical {
+    flex-direction: column;
+  }
+
+  label {
+    transition: color var(--transition-duration--default) linear,
+    background-color var(--transition-duration--default) linear,
+    border-color var(--transition-duration--default) linear;
+
+    &::after {
+      transition: background-color var(--transition-duration--default) linear;
+    }
+  }
+
+  input:checked + label {
+    background-color: var(--nittany-navy);
+    color: var(--white);
+    padding: calc(var(--form-element-padding--vertical) - _rem(.5)) _rem(2.5);
+    --form-help-color: var(--pa-link-light);
+
+    &::after {
+      background-color: var(--pa-link-light);
+      content: '';
+      flex-basis: 100%;
+      // @TODO: Keep an eye on the need for -webkit-mask.
+      -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439 105c12 13 12 33 0 46L183 407a32 32 0 0 1-46 0L9 279a32 32 0 0 1 46-46l105 106 233-234c13-12 33-12 46 0z"/></svg>') no-repeat center/1rem auto;
+      mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439 105c12 13 12 33 0 46L183 407a32 32 0 0 1-46 0L9 279a32 32 0 0 1 46-46l105 106 233-234c13-12 33-12 46 0z"/></svg>') no-repeat center/1rem auto;
+      height: _rem(1);
+    }
+  }
+
+  input:focus-visible + label {
+    border-color: var(--beaver-blue);
+    background: var(--pa-link-light);
+    color: var(--nittany-navy);
+  }
+
+  @media (any-hover: hover) {
+    input + label:hover {
+      border-color: var(--beaver-blue);
+      background: var(--pa-link-light);
+      color: var(--nittany-navy);
+    }
+  }
+
+  input:checked:focus-visible + label {
+    background-color: var(--pa-link);
+    color: var(--white);
+
+    &::after {
+      background-color: var(--white);
+    }
+  }
+
+  @media (any-hover: hover) {
+    input:checked + label:hover {
+      background-color: var(--pa-link);
+      color: var(--white);
+
+      &::after {
+        background-color: var(--white);
+      }
+    }
+  }
+
+  input:focus-visible + label {
+    outline: _rem(.2) solid var(--sky-blue);
+    outline-offset: _rem(.2);
+  }
+
+  input:disabled {
+    & + label {
+      border-color: var(--limestone);
+      background-color: var(--form-element-disabled-background-color);
+      color: var(--form-element-disabled-text-color);
+    }
+  }
+
+  @media (any-hover: hover) {
+    input:disabled:hover {
+      & + label {
+        border-color: var(--limestone);
+        background-color: var(--form-element-disabled-background-color);
+        color: var(--form-element-disabled-text-color);
+      }
+    }
+  }
+
+  input:checked:disabled {
+    & + label {
+      border-color: color-mix(in srgb, transparent, var(--slate) 60%);
+      background-color: color-mix(in srgb, transparent, var(--limestone) 80%);
+      &::after {
+        background-color: color-mix(in srgb, transparent, var(--slate) 80%);
+      }
+    }
+  }
+
+  @media (any-hover: hover) {
+    input:checked:disabled:hover {
+      & + label {
+        border-color: color-mix(in srgb, transparent, var(--slate) 60%);
+        background-color: color-mix(in srgb, transparent, var(--limestone) 80%);
+        &::after {
+          background-color: color-mix(in srgb, transparent, var(--slate) 80%);
+        }
+      }
+    }
+  }
+
+  input:is([data-light] *) {
+    & + label {
+      border-color: var(--pa-link);
+      background: var(--white);
+      color: var(--beaver-blue);
+    }
+
+    @media (any-hover: hover) {
+      & + label:hover {
+        color: var(--nittany-navy);
+        border-color: var(--beaver-blue);
+        background: var(--pa-link-light);
+      }
+    }
+
+    &:checked + label {
+      background-color: var(--beaver-blue);
+      border-color: var(--nittany-navy);
+      color: var(--white);
+      --form-help-color: var(--pa-link-light);
+
+      &::after {
+        background-color: var(--pa-link-light);
+      }
+    }
+
+    &:focus-visible:checked + label {
+      background-color: var(pa-link);
+      color: var(--white);
+    }
+
+    @media (any-hover: hover) {
+      &:checked + label:hover {
+        background-color: var(--pa-link);
+        color: var(--white);
+      }
+    }
+
+    &:disabled {
+      & + label {
+        border-color: var(--limestone);
+        background-color: var(--form-element-disabled-background-color);
+        color: var(--form-element-disabled-text-color);
+      }
+
+      @media (any-hover: hover) {
+        & + label:hover {
+          border-color: var(--limestone);
+          background-color: var(--form-element-disabled-background-color);
+          color: var(--form-element-disabled-text-color);
+        }
+      }
+    }
+
+    &:checked:disabled {
+      & + label {
+        border-color: color-mix(in srgb, transparent, var(--slate) 60%);
+        background-color: color-mix(in srgb, transparent, var(--limestone) 80%);
+
+        &::after {
+          background-color: color-mix(in srgb, transparent, var(--slate) 80%);
+        }
+      }
+
+      @media (any-hover: hover) {
+        & + label:hover {
+          border-color: color-mix(in srgb, transparent, var(--slate) 60%);
+          background-color: color-mix(in srgb, transparent, var(--limestone) 80%);
+
+          &::after {
+            background-color: color-mix(in srgb, transparent, var(--slate) 80%);
+          }
+        }
+      }
+    }
+  }
+
+  input:is([data-dark] *) {
+
+    & + label {
+      border-color: var(--light-grey);
+      background: var(--beaver-blue);
+      color: var(--white);
+    }
+
+    @media (any-hover: hover) {
+      & + label:hover {
+        color: var(--white);
+        border-color: var(--white);
+        background: var(--pa-link);
+      }
+    }
+
+    &:checked + label {
+      background-color: var(--white);
+      border-color: var(--white);
+      color: var(--nittany-navy);
+      --form-help-color: var(--pa-link);
+
+      &::after {
+        background-color: var(--pa-link);
+      }
+    }
+
+    &:focus-visible:checked + label {
+      background-color: var(--pa-link-light);
+      color: var(--nittany-navy);
+    }
+
+    @media (any-hover: hover) {
+      &:checked + label:hover {
+        background-color: var(--pa-link-light);
+        color: var(--nittany-navy);
+      }
+    }
+
+    &:disabled {
+      & + label {
+        border-color: var(--limestone);
+        background-color: var(--slate);
+        color: var(--slate-light);
+      }
+
+      @media (any-hover: hover) {
+        & + label:hover {
+          border-color: var(--limestone);
+          background-color: var(--slate);
+          color: var(--slate-light);
+        }
+      }
+    }
+
+    &:checked:disabled {
+      & + label {
+        border-color: var(--slate-light);
+        background-color: var(--limestone);
+        color: color-mix(in srgb, transparent, var(--nittany-navy) 80%);
+
+        &::after {
+          background-color: var(--slate);
+        }
+      }
+
+      @media (any-hover: hover) {
+        & + label:hover {
+          border-color: var(--slate-light);
+          background-color: var(--limestone);
+          color: color-mix(in srgb, transparent, var(--nittany-navy) 80%);
+
+          &::after {
+            background-color: var(--slate);
+          }
+        }
+      }
+    }
+  }
+}

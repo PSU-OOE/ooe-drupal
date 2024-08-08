@@ -1,0 +1,36 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.form-type-email {
+  > .form-item__element-wrapper > .form-item__element {
+    position: relative;
+
+    > input ~ .ajax-progress-throbber {
+      position: absolute;
+      inset: 0 var(--form-element-padding--horizontal) 0 auto;
+      // .4rem = spinner height / 4.
+      padding: calc(var(--form-element-padding--vertical) - _rem(.4)) 0;
+    }
+
+    > input ~ .form-item--warning-message {
+      .email-warning {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: _rem(1);
+        position: relative;
+        font-family: var(--font-family--text);
+        font-size: var(--font-size--4xsmall);
+        font-weight: var(--font-weight--regular);
+
+        &__message {
+          display: block;
+          flex: 1;
+        }
+
+        &__action {
+          flex: 0;
+        }
+      }
+    }
+  }
+}

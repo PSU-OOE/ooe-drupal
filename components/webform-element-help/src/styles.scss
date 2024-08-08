@@ -1,0 +1,31 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-element-help {
+  color: var(--form-help-color);
+  border: none;
+  width: _rem(2);
+  height: _rem(2);
+  font-size: _rem(2);
+  line-height: 0;
+  vertical-align: middle;
+
+  &--title {
+    margin-bottom: 0.2em;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+
+  &--content {
+    font-weight: normal;
+
+    a {
+      &:link, &:visited, &:hover, &:active {
+        color: #9cf;
+      }
+    }
+
+    p {
+      color: var(--text-color--light);
+    }
+  }
+}

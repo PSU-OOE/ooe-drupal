@@ -1,0 +1,31 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-type-webform-checkboxes-other {
+
+  > legend {
+    margin-bottom: _rem(.8);
+  }
+
+  > .fieldset-wrapper {
+
+    > .webform-checkboxes-other-input {
+      margin-top: _rem(1.5);
+      margin-bottom: 0;
+
+      // Prevent JS from making things overflow.
+      width: var(--form-element-width) !important;
+
+      + .form-item__description {
+        margin-top: _rem(.5);
+      }
+    }
+
+    > .form-type-checkboxes + .form-item__description {
+      margin-top: _rem(.5);
+    }
+
+    > .form-item--error-message {
+      margin-top: _rem(1.5);
+    }
+  }
+}

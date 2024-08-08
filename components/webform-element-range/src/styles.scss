@@ -1,0 +1,96 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.form-type-range {
+
+  // Always vertically align and stretch range elements.
+  > .form-item__element-wrapper {
+    align-items: center;
+
+    // Zap the padding / margin on suffix / prefixes and nested form items.
+    & > .form-item__prefix,
+    & > .form-item__suffix {
+      padding: 0;
+
+      & > .form-item {
+        margin: 0;
+      }
+    }
+
+    // Add margin to account for the track thumb height.
+    & > .form-item__element {
+      position: relative;
+      margin: _rem(1) 0;
+
+      // Account for the additional height of the floating output.
+      &:has(> output[data-display="below"]) {
+        margin-bottom: _rem(5.7);
+      }
+
+      // Account for the additional height of the floating output.
+      &:has(> output[data-display="above"]) {
+        margin-top: _rem(5.5);
+      }
+
+      & > output {
+        position: absolute;
+        font-family: var(--form-element-font-family);
+        font-weight: var(--form-element-font-weight);
+        color: var(--form-element-text-color);
+        font-size: var(--form-element-font-size);
+        line-height: var(--form-element-line-height);
+
+        // Vertically position the floating output. Horizontal alignment must
+        // happen via javascript.
+        &[data-display="below"] {
+          top: 100%;
+
+          & > span {
+            top: calc(100% + _rem(.8) + (_rem(1) * #{'sqrt(2)'}));
+
+            // Form an upward facing triangle.
+            &::before {
+              border-bottom: calc(_rem(1) * #{'(sqrt(2) / 2)'}) solid var(--form-element-background-color);
+              border-left: calc(_rem(1) * #{'(sqrt(2) / 2)'}) solid transparent;
+              border-right: calc(_rem(1) * #{'(sqrt(2) / 2)'}) solid transparent;
+              bottom: 100%;
+              margin-left: calc(_rem(-1) * #{'(sqrt(2) / 2)'});
+            }
+          }
+        }
+
+        &[data-display="above"] {
+          bottom: calc(100% + _rem(.4));
+
+          & > span {
+            bottom: calc(100% + _rem(.2) + (_rem(1) * #{'sqrt(2)'}));
+
+            // Form an downward facing triangle.
+            &::before {
+              border-top: calc(_rem(1) * #{'(sqrt(2) / 2)'}) solid var(--form-element-background-color);
+              border-left: calc(_rem(1) * #{'(sqrt(2) / 2)'}) solid transparent;
+              border-right: calc(_rem(1) * #{'(sqrt(2) / 2)'}) solid transparent;
+              top: 100%;
+              margin-left: calc(_rem(-1) * #{'(sqrt(2) / 2)'});
+            }
+          }
+        }
+
+        > span {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: _rem(.8);
+          background-color: var(--form-element-background-color);
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 50%;
+          }
+        }
+      }
+    }
+  }
+}

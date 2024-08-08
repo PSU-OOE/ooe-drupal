@@ -1,0 +1,24 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-type-webform-radios-other {
+
+  > legend {
+    margin-bottom: _rem(.8);
+  }
+
+  > .fieldset-wrapper > .webform-radios-other-input {
+    margin-top: _rem(1.5);
+    margin-bottom: 0;
+
+    // Prevent JS from making things overflow.
+    width: var(--form-element-width) !important;
+  }
+
+  > .fieldset-wrapper > .form-item--error-message {
+    margin-top: _rem(1.5);
+  }
+
+  > .fieldset-wrapper > .webform-radios-other-input + .form-item__description {
+    margin-top: _rem(.5);
+  }
+}

@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Default theme implementation for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set value = attributes.value|render %}
+
+{% if not value or attributes['data-icon-before'] or attributes['data-icon-after'] or 'webform' in attributes['class']|render %}
+  {% apply spaceless %}
+    <button{{ attributes }}>
+      {% if attributes['data-icon-before'] %}
+        <span class="cta-block__icon cta-block__icon--before">
+          {% include '@psu-ooe/sprite/sprite.twig' with { name: attributes['data-icon-before']|render } only %}
+        </span>
+      {% endif %}
+      {% if value %}
+        <span>{{ value }}</span>
+      {% endif %}
+      {% if attributes['data-icon-after'] %}
+        <span class="cta-block__icon cta-block__icon--after">
+          {% include '@psu-ooe/sprite/sprite.twig' with { name: attributes['data-icon-after']|render } only %}
+        </span>
+      {% endif %}
+      {{ children }}
+    </button>
+  {% endapply %}
+{% else %}
+  <input{{ attributes }} />{{ children }}
+{% endif %}

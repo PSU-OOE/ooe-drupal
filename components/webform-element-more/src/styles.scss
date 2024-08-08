@@ -1,0 +1,43 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-element-more {
+
+  &--link a {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: _rem(1);
+    color: var(--form-element-webform-more-color);
+    font-size: var(--font-size--small);
+    line-height: var(--line-height--xsnug);
+    vertical-align: middle;
+    text-decoration-color: transparent;
+
+    &:hover, &:focus-visible {
+      text-decoration-color: var(--form-element-webform-more-color);
+      text-decoration-style: dotted;
+    }
+
+    .sprite {
+      transition: transform var(--transition-duration--default) linear;
+      font-size: _rem(2);
+      flex-shrink: 0;
+    }
+
+    &[aria-expanded="true"] .sprite {
+      transform: rotateZ(45deg);
+    }
+  }
+
+  &--content {
+    display: none;
+    margin-top: _rem(1);
+    margin-left: _rem(3);
+
+    &, p {
+      color: var(--form-label-text-color);
+      font-size: var(--font-size--xsmall);
+      line-height: var(--line-height--xsnug);
+    }
+  }
+}

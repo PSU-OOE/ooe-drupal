@@ -1,0 +1,12 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.form-type-checkboxes {
+  display: flex;
+  gap: _rem(1.5) _rem(2.5);
+  flex-flow: row wrap;
+
+  & > .form-item {
+    margin: 0;
+    flex: 100%;
+  }
+}

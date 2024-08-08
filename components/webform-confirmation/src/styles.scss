@@ -1,0 +1,12 @@
+@import "../../../upstream-components/base/src/scss/imports/variables";
+@import "../../../upstream-components/base/src/scss/imports/layout";
+
+.webform-confirmation {
+  margin: auto;
+  max-width: _rem(119);
+  padding: 0 _rem(2);
+
+  @include bp(xs) {
+    padding: 0 _rem(4);
+  }
+}

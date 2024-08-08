@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme implementation of a Webform horizontal_rule element.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the horizontal_rule element.
+ *
+ * @see template_preprocess_webform_horizontal_rule()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if attributes.class == 'webform-horizontal-rule--thin-slate-light' %}
+  {{ attach_library('worldcampus/divider') }}
+  {% include '@psu-ooe/divider/divider.twig' with { variant: 'thin-slate-light' } only %}
+{% elseif attributes.class == 'webform-horizontal-rule--standard-light-grey' %}
+  {{ attach_library('worldcampus/divider') }}
+  {% include '@psu-ooe/divider/divider.twig' with { variant: 'standard-light-grey' } only %}
+{% else %}
+  {{ attach_library('webform/webform.element.horizontal_rule') }}
+  <hr{{ attributes.addClass('webform-horizontal-rule') }} />
+{% endif %}

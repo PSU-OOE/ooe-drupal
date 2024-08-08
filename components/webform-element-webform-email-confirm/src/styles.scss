@@ -1,0 +1,18 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-type-webform-email-confirm {
+
+  > .fieldset-wrapper {
+    > .webform-flexbox {
+      row-gap: var(--form-element-margin--vertical);
+
+      .form-item {
+        margin-bottom: 0;
+      }
+    }
+
+    > .form-item--error-message {
+      margin-top: _rem(.5);
+    }
+  }
+}

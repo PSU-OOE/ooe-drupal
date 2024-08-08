@@ -1,0 +1,28 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.form-type-webform-autocomplete {
+  > .form-item__element-wrapper > .form-item__element > .autocomplete {
+    position: relative;
+
+    &:has(> *:focus-visible) {
+      outline: _rem(.2) solid var(--sky-blue);
+      outline-offset: _rem(.2);
+
+      > *:focus-visible {
+        outline: none;
+      }
+    }
+
+    > .autocomplete__spinner {
+      display: none;
+      position: absolute;
+      inset: 0 var(--form-element-padding--horizontal) 0 auto;
+      // .4rem = spinner height / 4.
+      padding: calc(var(--form-element-padding--vertical) - _rem(.4)) 0;
+
+      &:is(.ui-autocomplete-loading + *) {
+        display: initial;
+      }
+    }
+  }
+}

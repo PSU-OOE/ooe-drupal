@@ -1,0 +1,18 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+.webform-type-webform-entity-checkboxes {
+
+  > legend {
+    margin-bottom: _rem(.8);
+  }
+
+  > .fieldset-wrapper {
+    > .form-type-checkboxes + .form-item__description {
+      margin-top: _rem(.5);
+    }
+
+    > .form-item--error-message {
+      margin-top: _rem(1.5);
+    }
+  }
+}

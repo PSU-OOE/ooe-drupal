@@ -1,0 +1,19 @@
+.webform-element-description {
+  &, p {
+    color: var(--form-label-text-color);
+    font-family: var(--font-family--default);
+    font-weight: var(--font-weight--regular);
+    font-size: var(--font-size--2xsmall);
+    line-height: var(--line-height--xsnug);
+  }
+
+  a {
+    &, &:is([data-light] *) {
+      color: var(--form-label-text-color);
+    }
+
+    &:is([data-dark] *) {
+      color: var(--pa-link-light);
+    }
+  }
+}

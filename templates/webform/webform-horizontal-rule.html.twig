@@ -12,10 +12,10 @@
  */
 #}
 {% if attributes.class == 'webform-horizontal-rule--thin-slate-light' %}
-  {{ attach_library('worldcampus/divider') }}
+  {{ attach_library('ooe/divider') }}
   {% include '@psu-ooe/divider/divider.twig' with { variant: 'thin-slate-light' } only %}
 {% elseif attributes.class == 'webform-horizontal-rule--standard-light-grey' %}
-  {{ attach_library('worldcampus/divider') }}
+  {{ attach_library('ooe/divider') }}
   {% include '@psu-ooe/divider/divider.twig' with { variant: 'standard-light-grey' } only %}
 {% else %}
   {{ attach_library('webform/webform.element.horizontal_rule') }}

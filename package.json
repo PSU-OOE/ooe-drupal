@@ -101,7 +101,7 @@
   "scripts": {
     "lint": "stylelint components/*/src/*.scss",
     "build": "node scripts/build.js",
-    "fix": "stylelint docroot/themes/custom/wcstudent/components/*/src/*.scss --fix",
+    "fix": "stylelint components/*/src/*.scss --fix",
     "postinstall": "node scripts/post-install.js"
   },
   "devDependencies": {

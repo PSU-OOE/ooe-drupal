@@ -374,3 +374,11 @@ function ooe_preprocess_menu(array &$variables): void {
   }
   unset($item);
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for region.
+ */
+function ooe_preprocess_region(array &$variables): void {
+  $variables['attributes']['class'][] = 'region';
+  $variables['attributes']['class'][] = Html::getClass('region--' . $variables['region']);
+}

@@ -20,10 +20,13 @@
     line-height: var(--form-element-line-height);
     transition: background-color var(--transition-duration--default) linear,
     color var(--transition-duration--default) linear;
+    text-decoration: none;
 
     &.ui-state-active {
       background-color: var(--nittany-navy);
       color: var(--white);
+      text-decoration: none;
     }
   }
 }
+

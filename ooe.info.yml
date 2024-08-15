@@ -51,6 +51,8 @@ libraries-override:
       theme:
         assets/vendor/jquery.ui/themes/base/theme.css: false
 
+  gin/dialog: false
+
   search_api_autocomplete/search_api_autocomplete:
     css:
       theme:
@@ -164,3 +166,4 @@ components:
 dependencies:
   - components:components
   - twig_tweak:twig_tweak
+

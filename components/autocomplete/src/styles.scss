@@ -21,7 +21,8 @@
     transition: background-color var(--transition-duration--default) linear,
     color var(--transition-duration--default) linear;
     text-decoration: none;
-
+    cursor: pointer;
+    
     &.ui-state-active {
       background-color: var(--nittany-navy);
       color: var(--white);

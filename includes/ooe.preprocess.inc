@@ -98,7 +98,7 @@ function _ooe_preprocess_html_add_sprites(array &$variables): void {
     $allowed_elements = ['svg', 'defs', 'path', 'g', 'circle'];
     $safe_svg_markup = Xss::filter(file_get_contents($sprites_svg), $allowed_elements);
 
-    $variables['page_bottom'][] = [
+    $variables['page_top'][] = [
       '#type' => 'markup',
       '#markup' => Markup::create($safe_svg_markup),
     ];

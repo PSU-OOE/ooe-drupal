@@ -100,7 +100,7 @@ function _ooe_preprocess_html_add_sprites(array &$variables): void {
 
     $variables['page_top'][] = [
       '#type' => 'markup',
-      '#markup' => Markup::create($safe_svg_markup),
+      '#markup' => Markup::create('<div style="position:absolute">' . $safe_svg_markup . '</div>'),
     ];
   }
 }

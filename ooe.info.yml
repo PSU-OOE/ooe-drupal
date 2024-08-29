@@ -24,6 +24,9 @@ regions:
   footer_middle_third: "Footer middle (third)"
   footer_bottom: "Footer bottom"
 
+libraries:
+  - ooe/smooth-scroll
+
 libraries-extend:
   core/drupal.ajax:
     - ooe/ajax-progress-throbber

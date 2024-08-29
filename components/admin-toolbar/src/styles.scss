@@ -1,0 +1,29 @@
+@import '../../../upstream-components/base/src/scss/imports/variables';
+
+:root {
+  --gin-spacing-xxs: calc(#{_rem(0.25)} * 1.6);
+  --gin-spacing-xs: calc(#{_rem(0.5)} * 1.6);
+  --gin-spacing-s: calc(#{_rem(0.75)}* 1.6);
+  --gin-spacing-m: calc(#{_rem(1)} * 1.6);
+  --gin-spacing-l: calc(#{_rem(1.5)} * 1.6);
+  --gin-spacing-xl: calc(#{_rem(2)} * 1.6);
+  --gin-spacing-xxl: calc(#{_rem(3)} * 1.6);
+  --gin-spacing-xxxl: calc(#{_rem(4)} * 1.6);
+
+  --gin-border-xxs: calc(#{_rem(0.125)} * 1.6);
+  --gin-border-xs: calc(#{_rem(0.25)} * 1.6);
+  --gin-border-s: calc(#{_rem(0.375)} * 1.6);
+  --gin-border-m: calc(#{_rem(0.5)} * 1.6);
+  --gin-border-l: calc(#{_rem(0.75)} * 1.6);
+  --gin-border-xl: calc(#{_rem(1)} * 1.6);
+  --gin-font-size: calc(#{_rem(1)} * 1.6);
+}
+
+.toolbar-bar {
+  z-index: calc(var(--z-index--modal) + 1000) !important;
+}
+
+.contextual-toolbar-tab,
+.toolbar-tab:has(.acquia-inactive-subscription, .acquia-active-subscription) {
+  display: none !important;
+}

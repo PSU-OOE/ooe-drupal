@@ -96,3 +96,12 @@ function ooe_js_settings_alter(array &$settings): void {
     $settings['ooe']['spinner_component'] = \Drupal::service('renderer')->renderPlain($spinner);
   }
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function ooe_page_attachments_alter(array &$attachments) {
+  if (\Drupal::currentUser()->hasPermission('access toolbar')) {
+    $attachments['#attached']['library'][] = 'ooe/admin-toolbar';
+  }
+}

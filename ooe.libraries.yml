@@ -1,3 +1,23 @@
+admin-toolbar:
+  version: 1.0.0
+  css:
+    base:
+      components/admin-toolbar/dist/styles.css: { }
+  js:
+    components/admin-toolbar/dist/scripts.js: { }
+  dependencies:
+    - core/drupal
+    - core/once
+    - ooe/smooth-scroll
+
+smooth-scroll:
+  version: 1.0.0
+  js:
+    components/smooth-scroll/dist/scripts.js: { }
+  dependencies:
+    - core/drupal
+    - core/once
+
 # Form Styles
 form-actions:
   version: 1.0.0

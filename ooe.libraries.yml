@@ -1,7 +1,7 @@
 admin-toolbar:
   version: 1.0.0
   css:
-    base:
+    component:
       components/admin-toolbar/dist/styles.css: { }
   js:
     components/admin-toolbar/dist/scripts.js: { }
@@ -9,6 +9,7 @@ admin-toolbar:
     - core/drupal
     - core/once
     - ooe/smooth-scroll
+    - gin/gin_base
 
 smooth-scroll:
   version: 1.0.0

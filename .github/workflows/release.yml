@@ -15,6 +15,7 @@ jobs:
       - run: npm install
         env:
          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+         NPM_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: npm run build
       - run: rm -rf node_modules
       - run: cd .. && tar --exclude=".git*" -zcf ooe.tgz ooe-drupal --transform s/ooe-drupal/ooe/

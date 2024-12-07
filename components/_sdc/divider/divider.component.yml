@@ -1,0 +1,27 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Divider
+status: stable
+group: Molecule/Divider
+description: Divider
+props:
+  type: object
+  required:
+    - variant
+  properties:
+    variant:
+      type: string
+      title: Text
+      enum:
+        - tall-blue-gradient-geometric
+        - tall-medium-grey-geometric
+        - tall-blue-gradient-shield
+        - tall-medium-grey-shield
+        - standard-light-grey
+        - standard-white
+        - thin-slate-light
+      examples:
+        - tall-blue-gradient-geometric
+
+libraryOverrides:
+  dependencies:
+    - ooe/divider

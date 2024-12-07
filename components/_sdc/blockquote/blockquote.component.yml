@@ -1,0 +1,23 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Blockquote
+status: stable
+group: Molecule/Block Quote
+description: A Block Quote
+props:
+  type: object
+  required:
+    - quote
+  properties:
+    quote:
+      type: string
+      title: Quote
+      description: The quote.
+      examples: ["The question isn't who is going to let me; it's who is going to stop me."]
+    attribution:
+      type: string
+      title: Attribution
+      description: The attribution.
+      examples: ['Ayn Rand']
+libraryOverrides:
+  dependencies:
+    - ooe/base

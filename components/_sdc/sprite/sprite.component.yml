@@ -1,0 +1,126 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Sprite
+status: stable
+group: Molecule/Sprite
+description: Sprite
+props:
+  type: object
+  required:
+    - name
+  properties:
+    name:
+      type: string
+      title: Sprite
+      enum:
+        - blog
+        - community-shield
+        - custom-grass
+        - envelope
+        - fa-angle-up
+        - fa-arrows-maximize
+        - fa-bars
+        - fa-check-circle
+        - fa-chevron-double-left
+        - fa-chevron-double-right
+        - fa-chevron-left
+        - fa-circle-arrow-down
+        - fa-circle-notch
+        - fa-circle-plus
+        - fa-circle-question
+        - fa-clock
+        - fa-exclamation
+        - fa-exclamation-circle
+        - fa-exclamation-triangle
+        - fa-filter-solid
+        - fa-plus-circle
+        - fa-spinner-third
+        - fa-times
+        - facebook
+        - fas-arrow-up
+        - fas-arrow-up-right-from-square
+        - fas-atom-simple
+        - fas-bolt
+        - fas-book
+        - fas-book-open-reader
+        - fas-briefcase
+        - fas-briefcase-medical
+        - fas-building-columns
+        - fas-building-user
+        - fas-calculator
+        - fas-calendar-days
+        - fas-camera
+        - fas-certificate
+        - fas-chalkboard-user
+        - fas-chart-line
+        - fas-chevron-down
+        - fas-chevron-right
+        - fas-chevron-up
+        - fas-child-reaching
+        - fas-circle-bolt
+        - fas-circle-info
+        - fas-comments
+        - fas-computer-classic
+        - fas-earth-americas
+        - fas-ellipsis
+        - fas-ellipsis-vertical
+        - fas-family
+        - fas-file-pdf
+        - fas-flower-tulip
+        - fas-gear
+        - fas-globe
+        - fas-graduation-cap
+        - fas-handshake-simple
+        - fas-house
+        - fas-image
+        - fas-landmark
+        - fas-laptop
+        - fas-layer-group
+        - fas-leaf-maple
+        - fas-lightbulb-on
+        - fas-list-check
+        - fas-magnifying-glass
+        - fas-magnifying-glass-chart
+        - fas-message
+        - fas-money-bill
+        - fas-newspaper
+        - fas-notes-medical
+        - fas-object-group
+        - fas-paper-plane
+        - fas-pencil
+        - fas-people-roof
+        - fas-photo-film
+        - fas-photo-film-music
+        - fas-plug-circle-check
+        - fas-plus
+        - fas-raindrops
+        - fas-scale-balanced
+        - fas-school
+        - fas-seedling
+        - fas-shield-quartered
+        - fas-sitemap
+        - fas-sun
+        - fas-trash
+        - fas-user-doctor
+        - fas-user-group
+        - fas-wind-turbine
+        - flickr
+        - hub-geometric
+        - instagram
+        - linkedin
+        - phone
+        - pinterest
+        - psu-mark
+        - tiktok
+        - twitter
+        - wc-mark
+        - youtube
+        - youtube-player
+      examples:
+        - psu-mark
+    expand:
+      type: boolean
+      title: 'Expand sprite to width'
+
+libraryOverrides:
+  dependencies:
+    - ooe/sprite

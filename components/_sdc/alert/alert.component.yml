@@ -1,0 +1,33 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Alert
+status: stable
+group: Molecule/Alert
+description: Alert
+props:
+  type: object
+  required:
+    - severity
+    - content
+  properties:
+
+    severity:
+      type: string
+      title: Severity
+      enum:
+        - info
+        - status
+        - warning
+        - error
+      examples:
+        - info
+
+    content:
+      type: string
+      title: Text
+      $ref: json-schema-definitions://experience_builder.module/textarea
+      examples: ["Some example text"]
+
+# @see https://github.com/PSU-OOE/components/tree/main/packages/alert
+libraryOverrides:
+  dependencies:
+    - ooe/alert

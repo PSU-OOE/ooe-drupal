@@ -1,0 +1,27 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Infographic
+status: stable
+group: Molecule/Infographic
+description: Infographic
+props:
+  type: object
+  properties:
+    emphasis:
+      type: string
+      title: Emphasis text
+      examples:
+        - 16
+    preliminary:
+      type: string
+      title: Preliminary text
+      examples:
+        - Liberal arts and communications
+    primary:
+      type: string
+      title: Primary text
+      examples:
+        - Degrees and Certificates
+
+libraryOverrides:
+  dependencies:
+    - ooe/infographic

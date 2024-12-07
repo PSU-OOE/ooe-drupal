@@ -1,0 +1,116 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Accordion
+status: stable
+group: Molecule/Accordion
+description: An accordion component
+props:
+  type: object
+  required:
+    - id
+  properties:
+
+    # @TODO: Is there any mechanism for config validation for an HTML ID?
+    # @TODO: Descriptions don't seem to appear in XB?
+    # @TODO: https://www.drupal.org/project/drupal/issues/3492365
+    id:
+      type: string
+      title: Accordion content ID
+      description: >
+        This ID is present on the accordion content and may act as a anchor link destination.
+        In the event of an ID collision, it will be auto-incremented.
+      examples: [""]
+
+    # @TODO: Default values do not appear to work?
+    # @TODO: Descriptions don't seem to appear?
+    expanded:
+      type: boolean
+      title: Expand by default
+      description: Note that all accordions are expanded by default in the Experience Builder editor.
+      default: false
+      default_value: false
+      examples: [false]
+
+    # @TODO: Default values do not appear to work?
+    # @TODO: Descriptions don't seem to appear?
+    borderless:
+      type: boolean
+      title: Omit borders
+      description: Only opt to omit borders if there is no need for a visual separation of content.
+      default: false
+
+    indent_content:
+      type: boolean
+      title: Indent content
+      default: true
+
+    # @TODO: Descriptions don't seem to appear?
+    heading_level:
+      title: Label semantic
+      description: >
+        The accordion activation label may be configured with semantic meaning.
+        Take note of the current heading level context if using this feature.
+      type: string
+      enum:
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+      default: ""
+      examples:
+        - null
+
+    heading_style:
+      title: Label style
+      description: >
+        The visual style of the heading may be decoupled from the semantic.
+        While there are certain scenarios where this feature is beneficial,
+        contact Web Strategy guidance prior to overriding heading styles.
+      type: string
+      enum:
+        - xlarge
+        - large
+        - medium
+        - small
+        - xsmall
+      examples:
+        - null
+
+    section:
+      title: 'Section'
+      description: >
+        This section will be used in page tracking and will be sent to Google
+        Analytics when a user expands this accordion either through manual
+        activation or by landing on the page with a #fragment that expands it.
+      type: string
+
+    toc_label:
+      title: 'Table of contents label'
+      description: 'This will be used if the page has a table of contents.'
+      type: string
+
+# @TODO: Experience Builder doesn't support array types.
+#    accordion_classes:
+#      title: 'Classes'
+#      description: 'One or more optional classes.'
+#      type: array
+#      items:
+#        type: string
+
+slots:
+
+  # @TODO: The label content must be restricted for a11y reasons!
+  label:
+    title: Label
+    description: Content to display inside the accordion activation button. If heading semantics are required, configure them on the accordion itself.
+    required: true
+
+  expandable_content:
+    title: Expandable content
+    description: Arbitrary accordion content.
+    required: true
+
+# @see https://github.com/PSU-OOE/components/tree/main/packages/accordion
+libraryOverrides:
+  dependencies:
+    - ooe/accordion

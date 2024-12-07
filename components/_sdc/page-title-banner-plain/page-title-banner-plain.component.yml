@@ -1,0 +1,28 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Plain page title
+status: stable
+group: Molecule/Plain page title
+description: Plain page title
+props:
+  type: object
+  required:
+    - title
+  properties:
+    subtitle_before:
+      type: string
+      title: Subtitle before
+      examples: ["Subtitle-before"]
+
+    title:
+      type: string
+      title: Text
+      examples: ["Title"]
+
+    subtitle_after:
+      type: string
+      title: Subtitle after
+      examples: ["Subtitle-after"]
+
+libraryOverrides:
+  dependencies:
+    - ooe/page-title-banner-plain

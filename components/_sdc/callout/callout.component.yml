@@ -1,0 +1,58 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Callout
+status: stable
+group: Molecule/Callout
+description: A callout box
+props:
+  type: object
+  properties:
+
+    background:
+      type: string
+      title: Background color
+      description: The background color.
+      enum:
+        - white
+        - light-grey
+        - blue-gradient
+        - blue
+
+    shadow:
+      type: string
+      title: Shadow
+      enum:
+        - standard
+
+    width:
+      type: string
+      title: Width
+      enum:
+        - narrow
+
+    padding_vertical:
+      type: string
+      title: Vertical padding
+      enum:
+        - xsmall
+        - small
+        - small-percentage
+        - medium-percentage
+        - large-percentage
+
+    padding_horizontal:
+      type: string
+      title: Horizontal padding
+      enum:
+        - small-percentage
+        - medium-percentage
+        - large-percentage
+slots:
+  content:
+    type: string
+    title: Content
+    description: The container content.
+    required: true
+
+libraryOverrides:
+  dependencies:
+    - ooe/callout

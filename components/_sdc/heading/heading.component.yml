@@ -1,0 +1,61 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Heading
+status: stable
+group: Atom/Text
+description: A heading element
+props:
+  type: object
+  required:
+    - content
+  properties:
+    content:
+      type: string
+      title: Text
+      description: The heading text.
+      examples: ['A heading element']
+    size:
+      type: string
+      title: Style
+      description: The heading style to use.
+      enum:
+        - xlarge
+        - large
+        - medium
+        - small
+        - xsmall
+        - 2xsmall
+      examples: [xlarge, large, medium, small, xsmall, 2xsmall]
+    position:
+      type: string
+      title: Position
+      description: The position style to use.
+      enum:
+        - flush
+      examples: [flush]
+    align:
+      type: string
+      title: Alignment
+      description: The alignment style to use.
+      enum:
+        - left
+        - center
+        - right
+      examples: [left, center, right]
+    vspace:
+      type: string
+      title: Vertical spacing
+      description: The vertical spacing under the heading
+      enum:
+        - none
+        - small
+        - large
+      examples: [none, small, large]
+    level:
+      $ref: json-schema-definitions://experience_builder.module/heading-element
+      type: string
+      title: Element
+      description: The HTML element to use.
+      examples: [h1, h2, h3, h4, h5, h6]
+libraryOverrides:
+  dependencies:
+    - ooe/heading

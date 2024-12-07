@@ -1,0 +1,34 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Basic Tile
+status: stable
+group: Molecule/Basic Tile
+description: Basic Tile
+props:
+  type: object
+  required:
+    - primary_label
+  properties:
+
+    primary_label:
+      type: string
+      title: Primary label
+      examples:
+        - Primary label text
+
+    secondary_label:
+      type: string
+      title: Secondary label
+      examples:
+        - Secondary label text
+
+    tracking_synchronous:
+      type: string
+      title: Tracking mode
+      enum:
+        - sync
+        - async
+
+# @see https://github.com/PSU-OOE/components/tree/main/packages/alert
+libraryOverrides:
+  dependencies:
+    - ooe/basic-tile

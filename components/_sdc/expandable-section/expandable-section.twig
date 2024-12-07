@@ -1,0 +1,24 @@
+<div class="xb-expand-dummy-wrapper">
+  {% include '@psu-ooe/expandable-section/expandable-section.twig' %}
+  {% if is_xb_editing() %}
+    <script>
+      (() => {
+        const dummy_wrapper = document.currentScript.closest('.xb-expand-dummy-wrapper');
+        console.debug(dummy_wrapper);
+        setTimeout(() => {
+          dummy_wrapper.querySelector('.expandable-section').dispatchEvent(
+            new CustomEvent(
+              'component:activate',
+              {
+                detail: {
+                  disable_animation: true,
+                  activation_type: 'AUTO_EXPAND',
+                }
+              }
+            )
+          );
+        }, 1000);
+      })();
+    </script>
+  {% endif %}
+</div>

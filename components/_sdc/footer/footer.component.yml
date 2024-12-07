@@ -1,0 +1,49 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: PSU Footer
+status: stable
+group: Molecule/Footer
+description: A footer
+props:
+  type: object
+  properties:
+    bottom_background:
+      type: string
+      title: Bottom background variant
+      enum:
+        - 'default'
+        - 'white'
+slots:
+  top_first:
+    type: string
+    title: Top first region
+    required: true
+  top_second:
+    type: string
+    title: Top second region
+    required: true
+  top_third:
+    type: string
+    title: Top third region
+    required: true
+
+  middle_first:
+    type: string
+    title: Middle first region
+    required: true
+  middle_second:
+    type: string
+    title: Middle second region
+    required: true
+  middle_third:
+    type: string
+    title: Middle third region
+    required: true
+
+  colophon:
+    type: string
+    title: Colophon region
+    required: true
+
+libraryOverrides:
+  dependencies:
+    - ooe/footer

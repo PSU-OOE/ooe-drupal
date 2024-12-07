@@ -1,0 +1,49 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Two column layout
+status: stable
+group: Molecule/Two column layout
+description: A two column layout
+props:
+  type: object
+  properties:
+    gap:
+      type: string
+      title: Gap
+      description: The gap.
+      enum:
+        - 'large'
+    first_width:
+      type: integer
+      title: First column weight
+      enum:
+        - 25
+        - 33
+        - 50
+        - 67
+        - 75
+      examples: [50]
+    second_width:
+      type: integer
+      title: First column weight
+      enum:
+        - 25
+        - 33
+        - 50
+        - 67
+        - 75
+      examples: [50]
+slots:
+  first:
+    type: string
+    title: First column
+    description: The first column.
+    required: true
+  second:
+    type: string
+    title: Second column
+    description: The second column.
+    required: true
+
+libraryOverrides:
+  dependencies:
+    - ooe/layout-two-col

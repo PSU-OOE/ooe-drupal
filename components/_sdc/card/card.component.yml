@@ -1,0 +1,28 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Card
+status: stable
+group: Molecule/Card
+description: Card
+props:
+  type: object
+  properties:
+    image:
+      title: Image
+      $ref: json-schema-definitions://experience_builder.module/image
+      type: object
+    image_decorative:
+      type: boolean
+      title: Image is decorative
+    link_text:
+      type: string
+      title: Link text
+    link_url:
+      type: string
+      title: Link url
+    link_attribution:
+      type: string
+      title: Link attribution
+
+libraryOverrides:
+  dependencies:
+    - ooe/card

@@ -1,0 +1,42 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Address
+status: stable
+group: Molecule/Address
+description: Address
+props:
+  type: object
+  properties:
+    element:
+      type: string
+      title: 'Semantic element'
+      enum:
+        - address
+    name:
+      type: string
+      title: Text
+      examples:
+        - The Pennsylvania State University
+    street:
+      type: string
+      title: Text
+      examples:
+        - 100 Innovation Blvd.
+    locality:
+      type: string
+      title: Text
+      examples:
+        - University Park
+    state:
+      type: string
+      title: Text
+      examples:
+        - PA
+    postcode:
+      type: string
+      title: Text
+      examples:
+        - 16803
+
+libraryOverrides:
+  dependencies:
+    - ooe/physical-address

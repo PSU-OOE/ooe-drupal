@@ -1,0 +1,8 @@
+{% if attribution %}
+  <figure>
+    <blockquote>{{- quote -}}</blockquote>
+    <figcaption>—{{- attribution -}}</figcaption>
+  </figure>
+{% else %}
+  <blockquote>{{- quote -}}</blockquote>
+{% endif %}

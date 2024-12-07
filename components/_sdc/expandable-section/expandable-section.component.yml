@@ -1,0 +1,63 @@
+$schema: 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Expandable Section
+status: stable
+group: Molecule/Expandable Section
+description: An expandable section component
+props:
+  type: object
+  required:
+    - id
+    - expand_label
+    - collapse_label
+  properties:
+
+    id:
+      type: string
+      title: Expandable section content ID
+      description: >
+        This ID is present on the expandable section content and may act as an
+        anchor link destination. In the event of an ID collision, it will be
+        auto-incremented.
+      examples: [""]
+
+    expand_label:
+      type: string
+      title: Expand button label
+      examples:
+        - Expand content
+
+    collapse_label:
+      type: string
+      title: Collapse button label
+      examples:
+        - Collapse content
+
+    section:
+      title: 'Section'
+      description: >
+        This section will be used in page tracking and will be sent to Google
+        Analytics when a user expands this accordion either through manual
+        activation or by landing on the page with a #fragment that expands it.
+      type: string
+
+    toc_label:
+      title: 'Table of contents label'
+      description: 'This will be used if the page has a table of contents.'
+      type: string
+
+slots:
+
+  intro:
+    title: Intro
+    description: Content to display before the expandable section.
+    required: false
+
+  content:
+    title: Expandable content
+    description: Arbitrary accordion content.
+    required: true
+
+# @see https://github.com/PSU-OOE/components/tree/main/packages/accordion
+libraryOverrides:
+  dependencies:
+    - ooe/expandable-section

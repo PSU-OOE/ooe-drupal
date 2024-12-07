@@ -1,0 +1,40 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Announcement
+status: stable
+group: Molecule/Announcement
+description: Announcement
+props:
+  type: object
+  required:
+    - severity
+    - label
+    - content
+  properties:
+
+    severity:
+      type: string
+      title: Severity
+      enum:
+        - notice
+        - warning
+        - emergency
+      examples:
+        - notice
+
+    label:
+      type: string
+      title: Label
+      examples:
+        - The announcement label
+
+    content:
+      type: string
+      title: Announcement
+      $ref: json-schema-definitions://experience_builder.module/textarea
+      examples:
+        - The announcement content
+
+# @see https://github.com/PSU-OOE/components/tree/main/packages/alert
+libraryOverrides:
+  dependencies:
+    - ooe/announcement

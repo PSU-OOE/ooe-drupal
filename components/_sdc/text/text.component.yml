@@ -1,0 +1,17 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Text
+status: stable
+group: Molecule/Text
+description: Text
+props:
+  type: object
+  properties:
+    content:
+      type: string
+      title: Text
+      $ref: json-schema-definitions://experience_builder.module/textarea
+      default_value: { value: 'test' }
+      examples: ["Some example text"]
+    wrap:
+      type: boolean
+      title: 'Wrap text in design system element'

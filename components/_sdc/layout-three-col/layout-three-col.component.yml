@@ -1,0 +1,58 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Three column layout
+status: stable
+group: Molecule/Three column layout
+description: A three column layout
+props:
+  type: object
+  properties:
+    gap:
+      type: string
+      title: Gap
+      description: The gap.
+      enum:
+        - 'large'
+    first_width:
+      type: integer
+      title: First column weight
+      enum:
+        - 25
+        - 33
+        - 50
+      examples: [33]
+    second_width:
+      type: integer
+      title: Second column weight
+      enum:
+        - 25
+        - 33
+        - 50
+      examples: [33]
+    third_width:
+      type: integer
+      title: Third column weight
+      enum:
+        - 25
+        - 33
+        - 50
+      examples: [33]
+slots:
+  first:
+    type: string
+    title: First column
+    description: The first column.
+    required: true
+  second:
+    type: string
+    title: Second column
+    description: The second column.
+    required: true
+  third:
+    type: string
+    title: Third column
+    description: The third column.
+    required: true
+
+libraryOverrides:
+  dependencies:
+    - ooe/layout-three-col

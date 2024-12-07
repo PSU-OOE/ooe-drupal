@@ -22,10 +22,10 @@ require_once implode(DIRECTORY_SEPARATOR, [__DIR__, 'includes', 'ooe.suggestions
  *   if there are dependencies, declare them
  * end component loop
  */
-function ooe_library_info_build(): array {
-
-  $libraries = [];
-
+function ooe_library_info_alter(array &$libraries, string $extension) {
+  if ($extension !== 'ooe') {
+    return;
+  }
   /** @var \Drupal\Core\Extension\ThemeExtensionList $extension_theme_list */
   $extension_theme_list = \Drupal::service('extension.list.theme');
   $theme_path = $extension_theme_list->getPath('ooe');

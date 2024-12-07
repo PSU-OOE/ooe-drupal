@@ -1,0 +1,28 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Header
+status: stable
+group: Molecule/Header
+description: A header
+props:
+  type: object
+  properties:
+    dummy:
+      type: string
+      title: Dummy prop
+
+slots:
+  dogear_content:
+    type: string
+    title: Dogear content region
+
+  content:
+    type: string
+    title: Content region
+
+  overflow:
+    type: string
+    title: Overflow region
+
+libraryOverrides:
+  dependencies:
+    - ooe/header

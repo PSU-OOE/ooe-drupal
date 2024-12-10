@@ -12,11 +12,13 @@ props:
       title: Background color
       description: The background color.
       enum:
+        - transparent
         - white
         - light-grey
         - blue-gradient
         - blue
-
+      examples:
+        - transparent
     shadow:
       type: string
       title: Shadow

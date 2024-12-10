@@ -1,0 +1,62 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Overlay
+status: stable
+group: Molecule/Overlay
+description: An overlay
+props:
+  type: object
+  properties:
+    overlay_bg_color:
+      type: string
+      title: Overlay background color
+      enum:
+        - blue-gradient
+        - beaver-blue
+        - light-grey
+        - white
+      examples:
+        - blue-gradient
+    column_width:
+      type: string
+      title: Column width
+      enum:
+        - narrow
+      examples:
+        - narrow
+    overlay_width:
+      type: string
+      title: Overlay width
+      enum:
+        - wide
+      examples:
+        - wide
+    image:
+      title: Image
+      $ref: json-schema-definitions://experience_builder.module/image
+      type: object
+      examples:
+        - src: https://test.worldcampus.psu.edu/sites/default/files/2021-12/quote-background-entry-gates-snow.jpg?itok=8J4_R3Oq
+          alt: 'Snowy sidewalk at Penn State''s University Park campus'
+    background_position:
+      type: string
+      title: Overlay width
+      enum:
+        - top-left
+        - top-right
+        - center-left
+        - center-center
+        - center-right
+        - bottom-left
+        - bottom-center
+        - bottom-right
+      examples:
+        - top-center
+slots:
+  content:
+    type: string
+    title: Overlay content
+    required: true
+
+libraryOverrides:
+  dependencies:
+    - ooe/overlay

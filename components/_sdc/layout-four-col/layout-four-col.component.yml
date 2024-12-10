@@ -11,7 +11,10 @@ props:
       title: Gap
       description: The gap.
       enum:
+        - 'default'
         - 'large'
+      examples:
+        - default
     first_width:
       type: integer
       title: First column weight

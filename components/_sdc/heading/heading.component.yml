@@ -18,13 +18,14 @@ props:
       title: Style
       description: The heading style to use.
       enum:
+
         - xlarge
         - large
         - medium
         - small
         - xsmall
         - 2xsmall
-      examples: [xlarge, large, medium, small, xsmall, 2xsmall]
+
     position:
       type: string
       title: Position
@@ -49,7 +50,7 @@ props:
         - none
         - small
         - large
-      examples: [none, small, large]
+      examples: [large, small, none]
     level:
       $ref: json-schema-definitions://experience_builder.module/heading-element
       type: string

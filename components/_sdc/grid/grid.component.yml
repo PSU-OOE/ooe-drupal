@@ -1,0 +1,29 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Grid
+status: stable
+group: Molecule/Grid
+description: A grid
+props:
+  type: object
+  properties:
+    columns:
+      type: integer
+      title: Column count
+      enum:
+        - 1
+        - 2
+        - 3
+        - 4
+      examples:
+        - 3
+slots:
+  items:
+    type: string
+    title: Grid items
+    required: true
+    examples:
+      - Drop grid items in here.
+
+libraryOverrides:
+  dependencies:
+    - ooe/grid

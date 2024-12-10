@@ -13,6 +13,7 @@ props:
       description: The color.
       examples: ['beaver-blue']
       enum:
+        - transparent
         - light-grey
         - beaver-blue
 

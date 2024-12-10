@@ -1,0 +1,45 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: List
+status: stable
+group: Molecule/List
+description: A list
+props:
+  type: object
+  properties:
+    list_semantic:
+      type: string
+      title: List semantic
+      enum:
+        - unordered
+        - ordered
+      examples:
+        - unordered
+    orientation:
+      type: string
+      title: Orientation
+      enum:
+        - vertical
+        - horizontal
+      examples:
+        - vertical
+    separator:
+      type: string
+      title: Orientation
+      enum:
+        - dot
+    density:
+      type: string
+      title: Density
+      enum:
+        - loose
+slots:
+  items:
+    type: string
+    title: List items
+    required: true
+    examples:
+      - Drop list items in here.
+
+libraryOverrides:
+  dependencies:
+    - ooe/list

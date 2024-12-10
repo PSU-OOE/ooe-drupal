@@ -1,0 +1,37 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Social Icon
+status: stable
+group: Molecule/Social Icon
+description: A social icon
+props:
+  type: object
+  properties:
+    icon:
+      type: string
+      title: Icon
+      enum:
+        - blog
+        - facebook
+        - flickr
+        - instagram
+        - linkedin
+        - pinterest
+        - tiktok
+        - twitter
+        - youtube
+      examples:
+        - youtube
+    label:
+      type: string
+      title: Label
+      examples:
+        - 'YouTube'
+    url:
+      type: string
+      title: Url
+      examples:
+        - 'https://www.youtube.com'
+
+libraryOverrides:
+  dependencies:
+    - ooe/social-icon

@@ -1,0 +1,24 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Social Icons
+status: stable
+group: Molecule/Social Icons
+description: A social icons
+props:
+  type: object
+  properties:
+    dummy:
+      type: string
+      title: Dummy prop
+      examples:
+        - dummy prop
+slots:
+  social_icons:
+    type: string
+    title: Social icons
+    required: true
+    examples:
+      - Drop social icons in here.
+
+libraryOverrides:
+  dependencies:
+    - ooe/social-icons

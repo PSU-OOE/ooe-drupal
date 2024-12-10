@@ -1,5 +1,1 @@
-{% if is_xb_editing() %} {# <-- this is a custom twig function to check the route name.  Super hacky. #}
-  {% set expanded = true %}
-{% endif %}
-{% set id = id|clean_id %}
 {% include '@psu-ooe/accordion/accordion.twig' %}

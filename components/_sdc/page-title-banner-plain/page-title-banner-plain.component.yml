@@ -23,6 +23,7 @@ props:
       title: Subtitle after
       examples: ["Subtitle-after"]
 
-libraryOverrides:
-  dependencies:
-    - ooe/page-title-banner-plain
+    image:
+      title: Image
+      $ref: json-schema-definitions://experience_builder.module/image
+      type: object

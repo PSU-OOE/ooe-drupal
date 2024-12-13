@@ -1,1 +1,10 @@
-{% include '@psu-ooe/page-title-banner-plain/page-title-banner-plain.twig' %}
+{% if image %}
+  {% set image %}
+    <img src="{{ image.src }}" alt="{{ image.alt }}" width="{{ image.width }}" height="{{ image.height }}">
+  {% endset %}
+  {{ attach_library('ooe/page-title-banner-image') }}
+  {% include '@psu-ooe/page-title-banner-image/page-title-banner-image.twig' %}
+{% else %}
+  {{ attach_library('ooe/page-title-banner-plain') }}
+  {% include '@psu-ooe/page-title-banner-plain/page-title-banner-plain.twig' %}
+{% endif %}

@@ -95,7 +95,7 @@ function _ooe_preprocess_html_add_sprites(array &$variables): void {
   if (file_exists($sprites_svg)) {
 
     // Be sure to sanitize the markup, as it's a third party dependency now.
-    $allowed_elements = ['svg', 'defs', 'path', 'g', 'circle'];
+    $allowed_elements = ['svg', 'defs', 'path', 'g', 'circle', 'style'];
     $safe_svg_markup = Xss::filter(file_get_contents($sprites_svg), $allowed_elements);
 
     $variables['page_top'][] = [

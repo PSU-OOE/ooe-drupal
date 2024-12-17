@@ -97,7 +97,8 @@
     "@psu-ooe/textarea": "*",
     "@psu-ooe/upcoming-events": "*",
     "@psu-ooe/vertical-menu": "*",
-    "@psu-ooe/webfonts": "*"
+    "@psu-ooe/webfonts": "*",
+    "svg-sprite": "^2.0.4"
   },
   "scripts": {
     "lint": "stylelint components/*/src/*.scss",

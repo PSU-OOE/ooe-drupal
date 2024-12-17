@@ -40,6 +40,35 @@ fs.readdirSync(upstream_components_dir).forEach(component => {
   }
 });
 
+const SVGSpriter = require('svg-sprite');
+
+// Build upstream sprites
+const config = {
+  svg: {
+    namespaceIDs: false,
+    namespaceClassnames: false,
+    xmlDeclaration: false,
+    doctypeDeclaration: false,
+  },
+  mode: {
+    defs: {
+      inline: true,
+    },
+  },
+  shape: {
+    transform: [],
+  }
+};
+const spriter = new SVGSpriter(config);
+const sprites_dir = 'upstream-components/sprite/src/assets';
+fs.readdirSync(sprites_dir).forEach(sprite => {
+  spriter.add(sprite, null, fs.readFileSync('upstream-components/sprite/src/assets/' + sprite), 'utf-8');
+});
+
+spriter.compile((error, result) => {
+  fs.writeFileSync('./upstream-components/sprite/dist/sprites.svg', Buffer.from(result.defs.sprite._contents));
+});
+
 
 let components_dir = 'components'
 

@@ -40,7 +40,7 @@
     });
 
     const fixit = Object.assign(document.createElement('button'), {
-      classList: 'email-warning__action cta-block cta-block--xcompact cta-block--hollow-solid',
+      classList: 'email-warning__action button button--xcompact button--hollow-solid',
       type: 'button',
       innerHTML: 'Fix ' + visually_hidden.outerHTML,
     });

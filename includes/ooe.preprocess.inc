@@ -294,11 +294,11 @@ function ooe_preprocess_webform_actions(array &$variables): void {
     $variables['element'][$button]['#attributes']['class'][] = 'webform-button';
   }
   foreach (['submit', 'update', 'preview', 'preview_next', 'delete', 'wizard_next', 'wizard_prev', 'preview_prev'] as $button) {
-    $variables['element'][$button]['#attributes']['class'][] = 'cta-block';
+    $variables['element'][$button]['#attributes']['class'][] = 'button';
   }
 
   foreach (['submit', 'update', 'preview', 'preview_next', 'delete', 'wizard_next'] as $button) {
-    $variables['element'][$button]['#attributes']['class'][] = 'cta-block--on-dark-reversed';
+    $variables['element'][$button]['#attributes']['class'][] = 'button--on-dark-reversed';
   }
   // Set the proper default icons.
   $variables['element']['delete']['#attributes']['data-icon-before'] ??= 'fas-trash';

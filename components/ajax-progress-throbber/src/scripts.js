@@ -10,7 +10,7 @@
 
   Drupal.Ajax.prototype.setProgressIndicatorThrobber = function() {
     this.progress.element = $(Drupal.theme('ajaxProgressThrobber'));
-    $(this.element).find(".cta-block__icon").append(this.progress.element);
+    $(this.element).find(".button__icon").append(this.progress.element);
   };
 
 })(jQuery, Drupal, drupalSettings);

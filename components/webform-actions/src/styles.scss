@@ -28,7 +28,7 @@
   padding-left: _rem(2);
   padding-right: _rem(2);
 
-  > .cta-block__icon {
+  > .button__icon {
     font-size: var(--font-size--msmall);
 
     > .ajax-progress-throbber {
@@ -40,7 +40,7 @@
   &:disabled {
     cursor: not-allowed;
 
-    > .cta-block__icon >.sprite {
+    > .button__icon >.sprite {
       display: none;
     }
 

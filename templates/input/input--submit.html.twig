@@ -18,7 +18,7 @@
   {% apply spaceless %}
     <button{{ attributes }}>
       {% if attributes['data-icon-before'] %}
-        <span class="cta-block__icon cta-block__icon--before">
+        <span class="button__icon">
           {% include '@psu-ooe/sprite/sprite.twig' with { name: attributes['data-icon-before']|render } only %}
         </span>
       {% endif %}
@@ -26,7 +26,7 @@
         <span>{{ value }}</span>
       {% endif %}
       {% if attributes['data-icon-after'] %}
-        <span class="cta-block__icon cta-block__icon--after">
+        <span class="button__icon">
           {% include '@psu-ooe/sprite/sprite.twig' with { name: attributes['data-icon-after']|render } only %}
         </span>
       {% endif %}

@@ -183,6 +183,7 @@ file-managed-file:
     - ooe/form-item
     - ooe/input-file
     - ooe/status-messages
+    - webform/webform.element.managed_file
     - core/drupal
     - core/once
 
